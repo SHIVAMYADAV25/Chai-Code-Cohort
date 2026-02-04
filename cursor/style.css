@@ -291,6 +291,11 @@ main h3{
     letter-spacing: -0.0125em;
 }
 
+.tarif-name{
+    font-size: 15px;
+    color: #969592;
+}
+
 .cards-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
