@@ -1,0 +1,5 @@
+how internet works ? => https://youtu.be/G15XxeKhhvI
+coverting the tcp udp http and https in the story formate
+
+how DNS works ? => https://youtu.be/8-1wZSAoFj4
+detailed DNS explanation
