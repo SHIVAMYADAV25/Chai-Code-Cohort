@@ -3,3 +3,5 @@ coverting the tcp udp http and https in the story formate
 
 how DNS works ? => https://youtu.be/8-1wZSAoFj4
 detailed DNS explanation
+
+eraser => https://app.eraser.io/workspace/MbB1wwtjC1YCAgMUiGIG?origin=share
