@@ -1,0 +1,57 @@
+.chai-bg-gray-50 { background-color: #f9fafb; }
+.dark.chai-dark-bg-gray-900, .dark .chai-dark-bg-gray-900 { background-color: #111827; }
+.chai-text-gray-900 { color: #111827; }
+.dark.chai-dark-text-white, .dark .chai-dark-text-white { color: #ffffff; }
+.chai-fs-24 { font-size: 24px; }
+.chai-fw-bold { font-weight: 700; }
+.chai-mb-20 { margin-bottom: 20px; }
+.chai-p-20 { padding: 20px; }
+.chai-bg-red-100 { background-color: #fee2e2; }
+.dark.chai-dark-bg-red-800, .dark .chai-dark-bg-red-800 { background-color: #991b1b; }
+.chai-bg-blue-500 { background-color: #3b82f6; }
+.chai-text-white { color: #ffffff; }
+.dark.chai-dark-bg-blue-600, .dark .chai-dark-bg-blue-600 { background-color: #2563eb; }
+.chai-flex { display: flex; }
+.chai-justify-center { justify-content: center; }
+.chai-items-center { align-items: center; }
+.chai-bg-gray-200 { background-color: #e5e7eb; }
+.dark.chai-dark-bg-gray-800, .dark .chai-dark-bg-gray-800 { background-color: #1f2933; }
+.chai-h-100 { height: 100px; }
+.chai-fs-18 { font-size: 18px; }
+.chai-lh-24 { line-height: 24px; }
+.chai-fw-medium { font-weight: 500; }
+.chai-border { border: 1px solid black; }
+.chai-bw-2 { border-width: 2px; border-style: solid; }
+.chai-bc-blue-500 { border-color: #3b82f6; }
+.chai-rounded-10 { border-radius: 10px; }
+.chai-shadow-0px-4px-10px-gray { box-shadow: 0px 4px 10px #6b7280; }
+.chai-p-10 { padding: 10px; }
+.chai-hover-bg-red-500:hover { background-color: #ef4444; }
+.chai-relative { position: relative; }
+.chai-absolute { position: absolute; }
+.chai-top-10 { top: 10px; }
+.chai-left-10 { left: 10px; }
+.chai-bg-red-500 { background-color: #ef4444; }
+.chai-bg-img-hero {
+      background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+    }
+.chai-bg-full {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+.chai-bg-center {
+      background-position: center;
+    }
+.chai-h-200 { height: 200px; }
+.chai-bg-gradient-blue-purple {
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+    }
+
+@media (min-width: 768px) {
+  .chai-md-p-40 { padding: 40px; }
+
+}
+.chai-bg-green-300 { background-color: #6ee7b7; }
+.dark.chai-dark-bg-green-700, .dark .chai-dark-bg-green-700 { background-color: #047857; }
+.dark.chai-dark-bg-gray-100, .dark .chai-dark-bg-gray-100 { background-color: #f3f4f6; }

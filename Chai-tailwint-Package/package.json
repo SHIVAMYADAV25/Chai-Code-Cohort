@@ -1,0 +1,16 @@
+{
+  "name": "chai-tailwind",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/chai.css",
+  "bin": {
+    "chai": "./src/cli/build.js"
+  },
+  "scripts": {
+    "build": "node src/cli/build.js",
+    "watch": "node src/cli/watch.js"
+  },
+  "exports": {
+    "./vite": "./src/vite/plugin.js"
+  }
+}
