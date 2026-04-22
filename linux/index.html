@@ -16,12 +16,10 @@
   --surface3: #e8e4df;
   --border: #e2ddd7;
   --border2: #d0cac3;
-
   --ink: #1a1714;
   --ink2: #4a4540;
   --ink3: #8a827a;
   --ink4: #b8b0a8;
-
   --green: #2d6a4f;
   --green-light: #e8f5ef;
   --green-mid: #52b788;
@@ -37,11 +35,9 @@
   --purple: #4c1d95;
   --purple-light: #ede9fe;
   --purple-mid: #7c3aed;
-
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
-
   --mono: 'DM Mono', monospace;
   --serif: 'Lora', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
@@ -60,18 +56,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── SCROLL PROGRESS ─── */
-.scroll-bar {
-  position: fixed; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--border); z-index: 200;
-}
-.scroll-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--green-mid), var(--blue-mid));
-  width: 0%; transition: width 0.1s;
-}
+/* SCROLL PROGRESS */
+.scroll-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--border); z-index: 200; }
+.scroll-fill { height: 100%; background: linear-gradient(90deg, var(--green-mid), var(--blue-mid)); width: 0%; transition: width 0.1s; }
 
-/* ─── HERO ─── */
+/* HERO */
 .hero {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -93,184 +82,79 @@ body {
   background: var(--green-light); border: 1px solid rgba(45,106,79,0.2);
   border-radius: 100px; padding: 5px 16px; margin-bottom: 24px;
 }
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(32px, 6vw, 62px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--ink);
-  margin-bottom: 20px;
-  max-width: 780px; margin-left: auto; margin-right: auto;
-}
+.hero h1 { font-family: var(--serif); font-size: clamp(32px, 6vw, 62px); font-weight: 700; line-height: 1.15; color: var(--ink); margin-bottom: 20px; max-width: 780px; margin-left: auto; margin-right: auto; }
 .hero h1 em { color: var(--green); font-style: italic; }
-.hero-sub {
-  font-size: 18px; color: var(--ink2); max-width: 580px;
-  margin: 0 auto 32px; line-height: 1.75; font-weight: 400;
-}
-.hero-meta {
-  font-family: var(--mono); font-size: 12px; color: var(--ink4);
-  letter-spacing: 1px;
-}
-.hero-dots {
-  display: flex; justify-content: center; gap: 6px;
-  margin-top: 32px; margin-bottom: 0;
-}
-.hero-dots span {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--border2);
-}
+.hero-sub { font-size: 18px; color: var(--ink2); max-width: 580px; margin: 0 auto 32px; line-height: 1.75; font-weight: 400; }
+.hero-meta { font-family: var(--mono); font-size: 12px; color: var(--ink4); letter-spacing: 1px; }
+.hero-dots { display: flex; justify-content: center; gap: 6px; margin-top: 32px; }
+.hero-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); }
 .hero-dots span:nth-child(1) { background: var(--green-mid); }
 .hero-dots span:nth-child(2) { background: var(--blue-mid); }
 .hero-dots span:nth-child(3) { background: var(--amber-mid); }
 
-/* ─── LAYOUT ─── */
-.page-body {
-  max-width: 900px; margin: 0 auto; padding: 0 24px 100px;
-}
+/* LAYOUT */
+.page-body { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
 
-/* ─── TOC ─── */
-.toc-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px 32px;
-  margin: 40px 0; box-shadow: var(--shadow-sm);
-}
-.toc-title {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--ink4); margin-bottom: 16px;
-}
+/* TOC */
+.toc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; margin: 40px 0; box-shadow: var(--shadow-sm); }
+.toc-title { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink4); margin-bottom: 16px; }
 .toc-grid { display: flex; flex-direction: column; gap: 4px; }
-.toc-item {
-  display: flex; align-items: center; gap: 14px;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  cursor: pointer; transition: background 0.15s, color 0.15s;
-  text-decoration: none;
-}
+.toc-item { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: var(--radius-sm); cursor: pointer; transition: background 0.15s, color 0.15s; text-decoration: none; }
 .toc-item:hover { background: var(--surface2); }
-.toc-num {
-  font-family: var(--mono); font-size: 11px;
-  color: var(--ink4); min-width: 24px;
-}
+.toc-num { font-family: var(--mono); font-size: 11px; color: var(--ink4); min-width: 24px; }
 .toc-label { font-size: 15px; color: var(--ink2); font-weight: 500; }
-.toc-tag {
-  margin-left: auto; font-family: var(--mono); font-size: 10px;
-  padding: 2px 8px; border-radius: 100px;
-  background: var(--green-light); color: var(--green);
-}
+.toc-tag { margin-left: auto; font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 100px; background: var(--green-light); color: var(--green); }
 
-/* ─── SECTION ─── */
-.section { padding: 60px 0 20px; }
+/* SECTION */
+.section { padding: 60px 0 20px; position: relative; }
 .section + .section { border-top: 1px solid var(--border); }
 
-.section-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px;
-  text-transform: uppercase; padding: 4px 14px;
-  border-radius: 100px; border: 1px solid;
-  margin-bottom: 20px;
-}
+.section-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; border: 1px solid; margin-bottom: 20px; }
 .badge-green { color: var(--green); border-color: rgba(45,106,79,0.25); background: var(--green-light); }
 .badge-blue { color: var(--blue); border-color: rgba(38,76,140,0.25); background: var(--blue-light); }
 .badge-amber { color: var(--amber); border-color: rgba(146,64,14,0.25); background: var(--amber-light); }
 .badge-rose { color: var(--rose); border-color: rgba(159,18,57,0.25); background: var(--rose-light); }
 .badge-purple { color: var(--purple); border-color: rgba(76,29,149,0.25); background: var(--purple-light); }
 
-.section h2 {
-  font-family: var(--serif); font-size: clamp(24px, 4vw, 36px);
-  font-weight: 700; line-height: 1.25;
-  color: var(--ink); margin-bottom: 14px;
-}
-.section-intro {
-  font-size: 17px; color: var(--ink2); max-width: 700px;
-  line-height: 1.8; margin-bottom: 28px; font-weight: 400;
-}
+.section h2 { font-family: var(--serif); font-size: clamp(24px, 4vw, 36px); font-weight: 700; line-height: 1.25; color: var(--ink); margin-bottom: 14px; }
+.section-intro { font-size: 17px; color: var(--ink2); max-width: 700px; line-height: 1.8; margin-bottom: 28px; font-weight: 400; }
 
-/* ─── CONCEPT BLOCK ─── */
-.concept-block {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px 28px;
-  margin: 20px 0; box-shadow: var(--shadow-sm);
-}
-.concept-block h3 {
-  font-family: var(--sans); font-size: 15px; font-weight: 600;
-  color: var(--ink); margin-bottom: 8px;
-  display: flex; align-items: center; gap: 10px;
-}
-.concept-block h3 .icon {
-  width: 28px; height: 28px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center; font-size: 14px;
-  flex-shrink: 0;
-}
+/* CONCEPT BLOCK */
+.concept-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin: 20px 0; box-shadow: var(--shadow-sm); }
+.concept-block h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.concept-block h3 .icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .concept-block p { font-size: 14px; color: var(--ink2); line-height: 1.75; }
-.concept-block code {
-  font-family: var(--mono); font-size: 13px;
-  background: var(--surface2); border: 1px solid var(--border);
-  border-radius: 5px; padding: 1px 6px; color: var(--blue);
-}
+.concept-block code { font-family: var(--mono); font-size: 13px; background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; color: var(--blue); }
 .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
 @media(max-width:600px) { .concept-grid { grid-template-columns: 1fr; } }
 
-/* ─── CALLOUT ─── */
-.callout {
-  display: flex; gap: 14px; align-items: flex-start;
-  border-radius: var(--radius); padding: 18px 20px;
-  margin: 20px 0; border: 1px solid;
-}
+/* CALLOUT */
+.callout { display: flex; gap: 14px; align-items: flex-start; border-radius: var(--radius); padding: 18px 20px; margin: 20px 0; border: 1px solid; }
 .callout-green { background: var(--green-light); border-color: rgba(45,106,79,0.2); }
 .callout-blue { background: var(--blue-light); border-color: rgba(38,76,140,0.2); }
 .callout-amber { background: var(--amber-light); border-color: rgba(146,64,14,0.2); }
-.callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; display:flex; align-items:flex-start; }
 .callout-body { flex: 1; }
 .callout-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
 .callout-text { font-size: 13px; color: var(--ink2); line-height: 1.7; }
-.callout-text code {
-  font-family: var(--mono); font-size: 12px;
-  background: rgba(255,255,255,0.6); border-radius: 4px; padding: 1px 5px;
-}
+.callout-text code { font-family: var(--mono); font-size: 12px; background: rgba(255,255,255,0.6); border-radius: 4px; padding: 1px 5px; }
 
-/* ─── SIM CARD ─── */
-.sim-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-  margin: 24px 0; box-shadow: var(--shadow);
-}
-.sim-header {
-  background: var(--surface2); border-bottom: 1px solid var(--border);
-  padding: 12px 18px; display: flex; align-items: center; gap: 10px;
-}
+/* SIM CARD */
+.sim-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 24px 0; box-shadow: var(--shadow); }
+.sim-header { background: var(--surface2); border-bottom: 1px solid var(--border); padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
 .win-dots { display: flex; gap: 5px; }
-.win-dots span {
-  width: 11px; height: 11px; border-radius: 50%;
-}
+.win-dots span { width: 11px; height: 11px; border-radius: 50%; }
 .win-dots span:nth-child(1) { background: #fc6058; }
 .win-dots span:nth-child(2) { background: #fea429; }
 .win-dots span:nth-child(3) { background: #29c940; }
-.sim-label {
-  font-family: var(--mono); font-size: 12px; color: var(--ink3);
-  flex: 1; text-align: center;
-}
-.live-pill {
-  font-family: var(--mono); font-size: 10px; color: var(--green);
-  background: var(--green-light); border: 1px solid rgba(45,106,79,0.2);
-  border-radius: 100px; padding: 3px 10px;
-  display: flex; align-items: center; gap: 5px;
-}
-.live-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green-mid);
-  animation: liveblink 1.2s ease-in-out infinite;
-}
+.sim-label { font-family: var(--mono); font-size: 12px; color: var(--ink3); flex: 1; text-align: center; }
+.live-pill { font-family: var(--mono); font-size: 10px; color: var(--green); background: var(--green-light); border: 1px solid rgba(45,106,79,0.2); border-radius: 100px; padding: 3px 10px; display: flex; align-items: center; gap: 5px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid); animation: liveblink 1.2s ease-in-out infinite; }
 @keyframes liveblink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 .sim-body { padding: 22px; }
 
-/* ─── TERMINAL ─── */
-.terminal {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 16px; font-family: var(--mono);
-  font-size: 12.5px; line-height: 1.85;
-  min-height: 110px; overflow-y: auto; max-height: 320px;
-  border: 1px solid rgba(0,0,0,0.15);
-  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
-}
+/* TERMINAL */
+.terminal { background: #1a1714; border-radius: var(--radius-sm); padding: 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.85; min-height: 110px; overflow-y: auto; max-height: 320px; border: 1px solid rgba(0,0,0,0.15); scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
 .terminal .line { display: block; }
 .terminal .t-ok { color: #52b788; }
 .terminal .t-warn { color: #f59e0b; }
@@ -279,23 +163,12 @@ body {
 .terminal .t-dim { color: #6b7280; }
 .terminal .t-prompt { color: #52b788; font-weight: 500; }
 .terminal .t-hi { color: #e2ddd7; font-weight: 500; }
-.cursor {
-  display: inline-block; width: 8px; height: 14px;
-  background: #52b788; animation: blink 1.1s step-end infinite;
-  vertical-align: text-bottom; margin-left: 2px; border-radius: 1px;
-}
+.cursor { display: inline-block; width: 8px; height: 14px; background: #52b788; animation: blink 1.1s step-end infinite; vertical-align: text-bottom; margin-left: 2px; border-radius: 1px; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-/* ─── BUTTONS ─── */
+/* BUTTONS */
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
-.btn {
-  font-family: var(--mono); font-size: 12px;
-  padding: 9px 18px; border-radius: var(--radius-sm);
-  border: 1px solid var(--border); background: var(--surface);
-  color: var(--ink2); cursor: pointer; transition: all 0.15s;
-  font-weight: 500; letter-spacing: 0.3px;
-  box-shadow: var(--shadow-sm);
-}
+.btn { font-family: var(--mono); font-size: 12px; padding: 9px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: var(--ink2); cursor: pointer; transition: all 0.15s; font-weight: 500; letter-spacing: 0.3px; box-shadow: var(--shadow-sm); }
 .btn:hover { background: var(--surface2); border-color: var(--border2); color: var(--ink); transform: translateY(-1px); box-shadow: var(--shadow); }
 .btn:active { transform: translateY(0); }
 .btn-green { color: var(--green); border-color: rgba(45,106,79,0.3); background: var(--green-light); }
@@ -305,38 +178,15 @@ body {
 .btn-blue { color: var(--blue); border-color: rgba(38,76,140,0.3); background: var(--blue-light); }
 .btn-blue:hover { background: #d4deef; border-color: var(--blue); }
 
-/* ─── PROGRESS ─── */
-.progress-track {
-  height: 4px; background: var(--surface3); border-radius: 100px;
-  margin: 14px 0; overflow: hidden;
-}
-.progress-fill {
-  height: 100%; border-radius: 100px; width: 0%;
-  background: linear-gradient(90deg, var(--green-mid), var(--blue-mid));
-  transition: width 0.5s ease;
-}
+/* PROGRESS */
+.progress-track { height: 4px; background: var(--surface3); border-radius: 100px; margin: 14px 0; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 100px; width: 0%; background: linear-gradient(90deg, var(--green-mid), var(--blue-mid)); transition: width 0.5s ease; }
 
-/* ─── DIAGRAM STRIP ─── */
-.diagram-strip {
-  display: flex; align-items: center;
-  gap: 0; overflow-x: auto; padding: 20px 0;
-  scrollbar-width: none;
-}
+/* DIAGRAM STRIP */
+.diagram-strip { display: flex; align-items: center; gap: 0; overflow-x: auto; padding: 20px 0; scrollbar-width: none; }
 .diagram-strip::-webkit-scrollbar { display: none; }
-.diag-node {
-  display: flex; flex-direction: column; align-items: center;
-  min-width: 100px; text-align: center; flex-shrink: 0;
-}
-.diag-box {
-  width: 80px; height: 48px;
-  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--mono); font-size: 10px; font-weight: 500;
-  text-align: center; padding: 4px; line-height: 1.3;
-  background: var(--surface); color: var(--ink2);
-  transition: all 0.25s; cursor: default;
-  box-shadow: var(--shadow-sm);
-}
+.diag-node { display: flex; flex-direction: column; align-items: center; min-width: 100px; text-align: center; flex-shrink: 0; }
+.diag-box { width: 80px; height: 48px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 10px; font-weight: 500; text-align: center; padding: 4px; line-height: 1.3; background: var(--surface); color: var(--ink2); transition: all 0.25s; cursor: default; box-shadow: var(--shadow-sm); }
 .diag-box.d-green { border-color: rgba(82,183,136,0.6); color: var(--green); background: var(--green-light); }
 .diag-box.d-blue { border-color: rgba(74,127,212,0.6); color: var(--blue); background: var(--blue-light); }
 .diag-box.d-amber { border-color: rgba(217,119,6,0.6); color: var(--amber); background: var(--amber-light); }
@@ -345,73 +195,45 @@ body {
 .diag-sub { font-size: 10px; color: var(--ink4); margin-top: 6px; font-family: var(--mono); max-width: 90px; }
 .diag-arrow { font-size: 18px; color: var(--border2); padding: 0 2px; margin-top: -20px; flex-shrink: 0; }
 
-/* ─── STATS BAR ─── */
-.stats-row {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr)); gap: 10px;
-  margin: 16px 0;
-}
-.stat-box {
-  background: var(--surface2); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 14px 16px;
-}
+/* STATS BAR */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr)); gap: 10px; margin: 16px 0; }
+.stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; }
 .stat-label { font-family: var(--mono); font-size: 10px; color: var(--ink4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
 .stat-val { font-family: var(--mono); font-size: 22px; font-weight: 500; color: var(--ink); }
 
-/* ─── PROCESS TABLE ─── */
+/* PROCESS TABLE */
 .sched-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media(max-width:600px) { .sched-grid { grid-template-columns: 1fr; } }
 .proc-list { display: flex; flex-direction: column; gap: 6px; }
-.proc-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px; border-radius: var(--radius-sm);
-  border: 1.5px solid var(--border); background: var(--surface);
-  font-family: var(--mono); font-size: 12px; cursor: pointer;
-  transition: all 0.2s; box-shadow: var(--shadow-sm);
-}
+.proc-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--surface); font-family: var(--mono); font-size: 12px; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm); }
 .proc-item:hover { border-color: var(--border2); background: var(--surface2); }
 .proc-item.proc-running { border-color: rgba(82,183,136,0.5); background: var(--green-light); }
 .proc-item.proc-waiting { border-color: rgba(74,127,212,0.4); background: var(--blue-light); }
 .proc-item.proc-blocked { border-color: rgba(225,29,72,0.4); background: var(--rose-light); }
-.proc-item.proc-zombie  { border-color: rgba(217,119,6,0.4); background: var(--amber-light); }
+.proc-item.proc-zombie { border-color: rgba(217,119,6,0.4); background: var(--amber-light); }
 .proc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .proc-running .proc-dot { background: var(--green-mid); box-shadow: 0 0 6px rgba(82,183,136,0.6); }
 .proc-waiting .proc-dot { background: var(--blue-mid); }
 .proc-blocked .proc-dot { background: var(--rose-mid); }
-.proc-zombie  .proc-dot { background: var(--amber-mid); }
+.proc-zombie .proc-dot { background: var(--amber-mid); }
 .proc-name { color: var(--ink); font-weight: 500; flex: 1; }
 .proc-pid { color: var(--ink4); font-size: 11px; }
 .proc-cpu-val { margin-left: auto; color: var(--green); }
 
-/* ─── CORE GRID ─── */
+/* CORE GRID */
 .core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.core-box {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 12px;
-  font-family: var(--mono); font-size: 11px;
-}
+.core-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: var(--mono); font-size: 11px; }
 .core-name { color: var(--ink3); margin-bottom: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
 .core-track { height: 5px; background: var(--surface3); border-radius: 100px; overflow: hidden; margin-bottom: 6px; }
 .core-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--green-mid), var(--blue-mid)); transition: width 0.8s ease; }
 .core-pct { color: var(--ink); font-weight: 500; font-size: 13px; }
 
-/* ─── SCHED LOG ─── */
-.sched-log {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 12px; font-family: var(--mono); font-size: 11px;
-  line-height: 1.8; max-height: 100px; overflow-y: auto;
-  min-height: 80px;
-  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
-}
+/* SCHED LOG */
+.sched-log { background: #1a1714; border-radius: var(--radius-sm); padding: 12px; font-family: var(--mono); font-size: 11px; line-height: 1.8; max-height: 100px; overflow-y: auto; min-height: 80px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
 
-/* ─── MEMORY MAP ─── */
+/* MEMORY MAP */
 .mem-map { display: flex; flex-direction: column; gap: 3px; }
-.mem-row {
-  display: grid; grid-template-columns: 140px 1fr 110px;
-  gap: 12px; padding: 9px 14px; border-radius: var(--radius-sm);
-  align-items: center; cursor: pointer;
-  border: 1px solid transparent;
-  transition: background 0.15s, border-color 0.15s;
-}
+.mem-row { display: grid; grid-template-columns: 140px 1fr 110px; gap: 12px; padding: 9px 14px; border-radius: var(--radius-sm); align-items: center; cursor: pointer; border: 1px solid transparent; transition: background 0.15s, border-color 0.15s; }
 .mem-row:hover { background: var(--surface2); border-color: var(--border); }
 .mem-addr { font-family: var(--mono); font-size: 11px; color: var(--blue); }
 .mem-bar-wrap { height: 12px; background: var(--surface3); border-radius: 100px; overflow: hidden; }
@@ -420,82 +242,46 @@ body {
 .mem-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
 .mem-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink3); font-family: var(--mono); }
 .mem-legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.mem-log { background: #1a1714; border-radius: var(--radius-sm); padding: 12px 14px; font-family: var(--mono); font-size: 11.5px; line-height: 1.8; min-height: 70px; margin-top: 10px; max-height: 130px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
 
-/* ─── MEM LOG ─── */
-.mem-log {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 12px 14px; font-family: var(--mono); font-size: 11.5px;
-  line-height: 1.8; min-height: 70px; margin-top: 10px;
-  max-height: 130px; overflow-y: auto;
-  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
-}
-
-/* ─── VFS ─── */
+/* VFS */
 .vfs-grid { display: grid; grid-template-columns: 200px 1fr; gap: 16px; }
 @media(max-width:600px) { .vfs-grid { grid-template-columns: 1fr; } }
-.file-tree {
-  background: var(--surface2); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 14px;
-  font-family: var(--mono); font-size: 12px; line-height: 2;
-}
+.file-tree { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; font-family: var(--mono); font-size: 12px; line-height: 2; }
 .file-tree .ft-dir { color: var(--blue); cursor: pointer; font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 8px; }
 .file-tree .ft-file { color: var(--ink3); cursor: pointer; padding-left: 14px; font-size: 12px; border-radius: 5px; padding-right: 6px; transition: background 0.1s, color 0.1s; display: block; }
 .file-tree .ft-file:hover { background: var(--surface3); color: var(--ink); }
 .file-tree .ft-file.active { background: var(--green-light); color: var(--green); }
-.inode-card {
-  background: var(--surface2); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 16px;
-  font-family: var(--mono); font-size: 12px;
-}
+.inode-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; font-family: var(--mono); font-size: 12px; }
 .inode-row { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--border); }
 .inode-row:last-child { border-bottom: none; }
 .inode-key { color: var(--ink3); min-width: 110px; font-size: 11px; }
 .inode-val { color: var(--ink); }
 .syscall-flow { margin-top: 16px; }
-.sc-step {
-  display: flex; align-items: center; gap: 10px;
-  padding: 7px 10px; border-radius: var(--radius-sm);
-  font-size: 12px; opacity: 0.3; transition: opacity 0.4s, background 0.4s;
-}
+.sc-step { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: var(--radius-sm); font-size: 12px; opacity: 0.3; transition: opacity 0.4s, background 0.4s; }
 .sc-step.active { opacity: 1; background: var(--green-light); }
-.sc-step-num {
-  width: 22px; height: 22px; border-radius: 50%;
-  border: 1.5px solid var(--border); display: flex; align-items: center;
-  justify-content: center; font-size: 10px; color: var(--ink3);
-  font-family: var(--mono); flex-shrink: 0;
-}
+.sc-step-num { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--ink3); font-family: var(--mono); flex-shrink: 0; }
 .sc-step.active .sc-step-num { border-color: var(--green); color: var(--green); background: var(--surface); }
 .sc-step-text { color: var(--ink2); font-family: var(--mono); font-size: 11px; }
 .sc-step.active .sc-step-text { color: var(--ink); }
 
-/* ─── HARDWARE / IRQ ─── */
+/* HARDWARE / IRQ */
 .hw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 10px; }
-.hw-device {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm); padding: 16px 12px;
-  text-align: center; cursor: pointer; transition: all 0.2s;
-  box-shadow: var(--shadow-sm);
-}
+.hw-device { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 16px 12px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm); }
 .hw-device:hover { border-color: var(--amber-mid); background: var(--amber-light); transform: translateY(-2px); box-shadow: var(--shadow); }
 .hw-device.firing { border-color: var(--amber-mid); background: var(--amber-light); animation: devicepulse 0.4s ease; }
 @keyframes devicepulse { 0%{transform:scale(1)} 50%{transform:scale(1.05)} 100%{transform:scale(1)} }
-.hw-icon { font-size: 26px; margin-bottom: 8px; }
+.hw-icon { display:flex; justify-content:center; margin-bottom: 8px; }
 .hw-name { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
 .hw-irq { font-family: var(--mono); font-size: 10px; color: var(--amber); }
 .hw-count { font-family: var(--mono); font-size: 10px; color: var(--ink4); margin-top: 4px; }
-.irq-log {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 12px; font-family: var(--mono); font-size: 11px;
-  min-height: 100px; max-height: 180px; overflow-y: auto;
-  margin-top: 12px;
-  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
-}
+.irq-log { background: #1a1714; border-radius: var(--radius-sm); padding: 12px; font-family: var(--mono); font-size: 11px; min-height: 100px; max-height: 180px; overflow-y: auto; margin-top: 12px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
 .irq-entry { display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .irq-time { color: #52b788; min-width: 70px; }
 .irq-text { color: #9ca3af; }
 .irq-text .irq-highlight { color: #f59e0b; }
 
-/* ─── SYSCALL TABLE ─── */
+/* SYSCALL TABLE */
 .sc-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
 .sc-table th { text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border); color: var(--ink3); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
 .sc-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
@@ -506,91 +292,262 @@ body {
 .sc-desc { color: var(--ink3); }
 .sc-ex { color: var(--ink2); font-size: 11px; }
 
-/* ─── STRACE LOG ─── */
-.strace-log {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 14px; font-family: var(--mono); font-size: 12px;
-  line-height: 1.8; min-height: 100px; max-height: 220px;
-  overflow-y: auto; margin-top: 12px;
-  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
-}
+/* STRACE LOG */
+.strace-log { background: #1a1714; border-radius: var(--radius-sm); padding: 14px; font-family: var(--mono); font-size: 12px; line-height: 1.8; min-height: 100px; max-height: 220px; overflow-y: auto; margin-top: 12px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
 
-/* ─── CODE BLOCK ─── */
-.code-block {
-  background: #1a1714; border-radius: var(--radius-sm);
-  padding: 18px; font-family: var(--mono); font-size: 12.5px;
-  line-height: 1.85; overflow-x: auto; margin: 16px 0;
-  border: 1px solid rgba(0,0,0,0.12);
-}
-.ck { color: #c084fc; }  /* keyword */
-.cf { color: #60a5fa; }  /* function */
-.cs { color: #fbbf24; }  /* string */
-.cm { color: #4b5563; font-style: italic; }  /* comment */
-.cn { color: #f59e0b; }  /* number */
-.ct { color: #e2ddd7; }  /* text */
+/* CODE BLOCK */
+.code-block { background: #1a1714; border-radius: var(--radius-sm); padding: 18px; font-family: var(--mono); font-size: 12.5px; line-height: 1.85; overflow-x: auto; margin: 16px 0; border: 1px solid rgba(0,0,0,0.12); }
+.ck { color: #c084fc; }
+.cf { color: #60a5fa; }
+.cs { color: #fbbf24; }
+.cm { color: #4b5563; font-style: italic; }
+.cn { color: #f59e0b; }
+.ct { color: #e2ddd7; }
 
-/* ─── SEPARATOR ─── */
-.section-divider {
-  display: flex; align-items: center; gap: 16px;
-  padding: 40px 0 20px;
-}
-.section-divider-line { flex: 1; height: 1px; background: var(--border); }
-.section-divider-num {
-  font-family: var(--mono); font-size: 11px; color: var(--ink4);
-  letter-spacing: 2px; padding: 4px 12px; background: var(--surface2);
-  border: 1px solid var(--border); border-radius: 100px;
-}
-
-/* ─── PIPELINE ─── */
-.pipeline {
-  display: flex; gap: 2px; overflow-x: auto;
-  padding: 4px 0; scrollbar-width: none;
-}
-.pipe-stage {
-  min-width: 85px; padding: 10px 8px;
-  border-radius: var(--radius-sm); border: 1.5px solid var(--border);
-  font-family: var(--mono); font-size: 10px; text-align: center;
-  background: var(--surface); flex-shrink: 0; transition: all 0.4s;
-  box-shadow: var(--shadow-sm);
-}
-.pipe-stage .ps-label { color: var(--ink4); font-size: 9px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 5px; }
-.pipe-stage .ps-val { color: var(--ink2); font-size: 11px; font-weight: 500; }
-.pipe-stage.ps-active { border-color: var(--amber-mid); background: var(--amber-light); }
-.pipe-stage.ps-done { border-color: rgba(82,183,136,0.5); background: var(--green-light); }
-.pipe-stage.ps-active .ps-label { color: var(--amber); }
-.pipe-stage.ps-done .ps-label { color: var(--green); }
-
-/* ─── GLOSSARY ─── */
-.glossary-term {
-  border-bottom: 2px dotted var(--border2); color: var(--blue);
-  cursor: help; position: relative;
-}
-
-/* ─── RING DIAGRAM ─── */
-.ring-diagram {
-  display: flex; flex-direction: column; gap: 6px;
-  margin: 18px 0; max-width: 480px;
-}
-.ring-layer {
-  border-radius: var(--radius-sm); padding: 12px 18px;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 13px; font-weight: 600; border: 1.5px solid;
-}
+/* RING DIAGRAM */
+.ring-diagram { display: flex; flex-direction: column; gap: 6px; margin: 18px 0; max-width: 480px; }
+.ring-layer { border-radius: var(--radius-sm); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; border: 1.5px solid; }
 .ring-sub { font-size: 11px; font-weight: 400; color: inherit; opacity: 0.75; margin-top: 2px; font-family: var(--mono); }
 
+/* ============================
+   JARGON SIDEBAR SYSTEM
+   ============================ */
+
+/* Arrow trigger button that floats at section heading level */
+.jargon-trigger-wrap {
+  position: relative;
+  display: inline-block;
+}
+.jargon-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: var(--amber-light);
+  border: 1px solid rgba(146,64,14,0.3);
+  border-radius: 100px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 14px;
+  vertical-align: middle;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+.jargon-trigger:hover {
+  background: #fde68a;
+  border-color: var(--amber);
+  transform: translateX(3px);
+}
+.jargon-trigger svg { flex-shrink: 0; }
+
+/* Sidebar overlay */
+.jargon-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.jargon-overlay.open {
+  pointer-events: all;
+  opacity: 1;
+}
+.jargon-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(26,23,20,0.35);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+.jargon-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 420px;
+  max-width: 100vw;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+  overflow: hidden;
+}
+.jargon-overlay.open .jargon-panel {
+  transform: translateX(0);
+}
+
+.jargon-panel-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.jargon-header-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--amber-light);
+  border: 1px solid rgba(146,64,14,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.jargon-panel-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.jargon-panel-subtitle {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-top: 4px;
+}
+.jargon-close {
+  margin-left: auto;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.jargon-close:hover { background: var(--surface3); }
+
+/* Section brief banner */
+.jargon-brief {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, rgba(146,64,14,0.06), rgba(217,119,6,0.04));
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.jargon-brief-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+.jargon-brief-text {
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.65;
+}
+
+/* Terms list */
+.jargon-terms {
+  overflow-y: auto;
+  flex: 1;
+  padding: 16px 24px 32px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+.jargon-term-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.jargon-term-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+.jargon-term-code {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+}
+.jargon-term-tag {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: var(--amber-light);
+  color: var(--amber);
+  letter-spacing: 0.5px;
+}
+.jargon-term-body {
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.7;
+}
+.jargon-term-body strong { color: var(--ink); font-weight: 600; }
+.jargon-term-body code { font-family: var(--mono); font-size: 11px; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; color: var(--blue); }
+.jargon-analogy {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--green-light);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: var(--green);
+  border-left: 3px solid var(--green-mid);
+}
+.jargon-analogy-label { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 3px; opacity: 0.8; }
+
+@media(max-width:600px) {
+  .jargon-panel { width: 100vw; }
+}
 </style>
 </head>
 <body>
 
 <div class="scroll-bar"><div class="scroll-fill" id="scrollFill"></div></div>
 
+<!-- JARGON OVERLAY (single, reused for all sections) -->
+<div class="jargon-overlay" id="jargonOverlay">
+  <div class="jargon-backdrop" onclick="closeJargon()"></div>
+  <div class="jargon-panel">
+    <div class="jargon-panel-header">
+      <div class="jargon-header-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="jargon-panel-title" id="jargonTitle">Jargon Explained</div>
+        <div class="jargon-panel-subtitle" id="jargonSubtitle">plain english for this section</div>
+      </div>
+      <div class="jargon-close" onclick="closeJargon()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+    </div>
+    <div class="jargon-brief">
+      <div class="jargon-brief-label">Section Overview</div>
+      <div class="jargon-brief-text" id="jargonBrief"></div>
+    </div>
+    <div class="jargon-terms" id="jargonTerms"></div>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">📖 Visual Learning Guide</div>
+  <div class="hero-eyebrow">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    Visual Learning Guide
+  </div>
   <h1>How the <em>Linux Kernel</em> Actually Works</h1>
-  <p class="hero-sub">
-    A friendly, interactive walkthrough — built for people who know Linux basics and want to understand what's happening under the hood. No PhD required.
-  </p>
+  <p class="hero-sub">A friendly, interactive walkthrough built for people who know Linux basics and want to understand what is happening under the hood. No PhD required.</p>
   <div class="hero-meta">April 2026 · Kernel v6.8 · Medium Level · All simulations are interactive</div>
   <div class="hero-dots"><span></span><span></span><span></span></div>
 </div>
@@ -599,7 +556,7 @@ body {
 
   <!-- TOC -->
   <div class="toc-card">
-    <div class="toc-title">What we'll cover</div>
+    <div class="toc-title">What we will cover</div>
     <div class="toc-grid">
       <div class="toc-item" onclick="document.getElementById('s0').scrollIntoView({behavior:'smooth'})">
         <span class="toc-num">00</span><span class="toc-label">What is the Kernel? (Start here)</span>
@@ -609,7 +566,7 @@ body {
         <span class="toc-num">01</span><span class="toc-label">Boot Sequence — From Power Button to Kernel</span>
       </div>
       <div class="toc-item" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})">
-        <span class="toc-num">02</span><span class="toc-label">Process Management & The Scheduler</span>
+        <span class="toc-num">02</span><span class="toc-label">Process Management and The Scheduler</span>
       </div>
       <div class="toc-item" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">
         <span class="toc-num">03</span><span class="toc-label">Memory Management — The Grand Illusion</span>
@@ -618,7 +575,7 @@ body {
         <span class="toc-num">04</span><span class="toc-label">Virtual File System (VFS)</span>
       </div>
       <div class="toc-item" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">
-        <span class="toc-num">05</span><span class="toc-label">Hardware Interrupts & IRQ Handling</span>
+        <span class="toc-num">05</span><span class="toc-label">Hardware Interrupts and IRQ Handling</span>
       </div>
       <div class="toc-item" onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})">
         <span class="toc-num">06</span><span class="toc-label">System Calls — Userspace to Kernel Bridge</span>
@@ -626,41 +583,66 @@ body {
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 0: WHAT IS THE KERNEL -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 0: FOUNDATION ═══ -->
   <div class="section" id="s0">
     <div class="section-badge badge-green">00 · foundation</div>
-    <h2>What is the Kernel? And Why Does it Exist?</h2>
+    <h2>What is the Kernel? And Why Does it Exist?
+      <span class="jargon-trigger" onclick="openJargon('s0')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
       Think of your computer as a city. Your apps (browser, terminal, VS Code) are like businesses. The <strong>kernel is the city government</strong> — it owns all the roads, electricity, water. No business gets direct access to infrastructure. They file a request, the government decides, then handles it.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">🏛️</div> What the kernel owns</h3>
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          What the kernel owns
+        </h3>
         <p>The kernel has <strong>exclusive control</strong> over CPU, RAM, disk, and all hardware. User programs are guests — they can only touch hardware by politely asking the kernel through <strong>system calls</strong>.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">🎭</div> Why this separation?</h3>
-        <p>Imagine if any app could directly write to your disk or grab all the RAM. Chaos. The kernel is a <strong>trusted middleman</strong> that enforces rules: process A can't read process B's memory. Chrome can't accidentally crash your disk driver.</p>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          Why this separation?
+        </h3>
+        <p>Imagine if any app could directly write to your disk or grab all the RAM. Chaos. The kernel is a <strong>trusted middleman</strong> that enforces rules: process A cannot read process B's memory. Chrome cannot accidentally crash your disk driver.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">⚙️</div> What the kernel does</h3>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          What the kernel does
+        </h3>
         <p>It manages <strong>5 core things</strong>: who gets CPU time (scheduler), virtual memory, file system access, hardware communication, and network I/O. Everything else is userspace.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--rose-light)">💤</div> When does the kernel run?</h3>
-        <p>The kernel is <strong>event-driven</strong>. It doesn't run constantly — it sleeps. It wakes up when: a program makes a syscall, a hardware interrupt fires, or a timer tick happens. Otherwise, it's out of the way.</p>
+        <h3>
+          <div class="icon" style="background:var(--rose-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          When does the kernel run?
+        </h3>
+        <p>The kernel is <strong>event-driven</strong>. It does not run constantly — it sleeps. It wakes up when: a program makes a syscall, a hardware interrupt fires, or a timer tick happens. Otherwise, it is out of the way.</p>
       </div>
     </div>
 
     <div class="callout callout-green">
-      <div class="callout-icon">💡</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">The Protection Rings — CPU-level enforcement</div>
         <div class="callout-text">
-          The x86 CPU has 4 privilege rings (0–3). Linux uses Ring 0 (kernel mode) and Ring 3 (user mode). In Ring 0, code can execute any instruction and access any memory. Ring 3 code gets a page fault or exception if it tries. This is enforced in hardware — it's not just a software convention.
+          The x86 CPU has 4 privilege rings (0 through 3). Linux uses Ring 0 (kernel mode) and Ring 3 (user mode). In Ring 0, code can execute any instruction and access any memory. Ring 3 code gets a page fault or exception if it tries. This is enforced in hardware — it is not just a software convention.
         </div>
       </div>
     </div>
@@ -675,7 +657,7 @@ body {
       </div>
       <div class="ring-layer" style="background:rgba(38,76,140,0.08);border-color:rgba(38,76,140,0.3);color:var(--blue)">
         <div>
-          <div>Ring 1 & 2 — Rarely used</div>
+          <div>Ring 1 and 2 — Rarely used</div>
           <div class="ring-sub">Device drivers sometimes · Linux mostly ignores these</div>
         </div>
         <span style="font-family:var(--mono);font-size:11px">Unused</span>
@@ -683,38 +665,61 @@ body {
       <div class="ring-layer" style="background:rgba(45,106,79,0.08);border-color:rgba(45,106,79,0.3);color:var(--green)">
         <div>
           <div>Ring 3 — User Space</div>
-          <div class="ring-sub">Your app runs here · Can't touch hardware directly · Must ask kernel</div>
+          <div class="ring-sub">Your app runs here · Cannot touch hardware directly · Must ask kernel</div>
         </div>
         <span style="font-family:var(--mono);font-size:11px">User</span>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 1: BOOT -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 1: BOOT ═══ -->
   <div class="section" id="s1">
     <div class="section-badge badge-amber">01 · boot sequence</div>
-    <h2>From Power Button to Kernel Alive</h2>
+    <h2>From Power Button to Kernel Alive
+      <span class="jargon-trigger" onclick="openJargon('s1')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
       The moment you press power, your machine goes through a carefully choreographed sequence. Nothing in the kernel is running yet — the CPU wakes up cold and has to be handed the wheel, step by step.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">🔌</div> Step 1 — BIOS / UEFI</h3>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          Step 1 — BIOS / UEFI
+        </h3>
         <p>The CPU wakes up at a fixed address (<code>0xFFFF0</code> in ROM). It runs <strong>POST</strong> (Power-On Self Test) — checks if RAM is there, if the CPU cores respond. This is the firmware, not Linux. On modern machines, UEFI replaces legacy BIOS with a full mini-OS that can read FAT32 partitions.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">💿</div> Step 2 — MBR / GPT</h3>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Step 2 — MBR / GPT
+        </h3>
         <p>BIOS reads the <strong>first 512 bytes of your boot disk</strong> — the Master Boot Record. It contains a tiny bootstrap program. GPT (modern disks) stores a partition table that UEFI reads to find the EFI System Partition. This stage's only job: load the real bootloader.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--purple-light)">🥾</div> Step 3 — GRUB2</h3>
+        <h3>
+          <div class="icon" style="background:var(--purple-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </div>
+          Step 3 — GRUB2
+        </h3>
         <p>GRUB (Grand Unified Bootloader) is the menu you sometimes see on boot. It knows how to read ext4/BTRFS/NTFS, finds <strong>vmlinuz</strong> (the compressed kernel) and <strong>initrd</strong> (initial RAM disk), loads them into RAM, and jumps into the kernel's entry point.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--rose-light)">🌱</div> Step 4 — initrd &amp; start_kernel()</h3>
+        <h3>
+          <div class="icon" style="background:var(--rose-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          Step 4 — initrd and start_kernel()
+        </h3>
         <p><code>initrd</code> is a tiny temporary filesystem in RAM with just enough to mount the real root filesystem. Once mounted, <code>start_kernel()</code> runs — setting up the memory allocator, interrupts, scheduler, and finally spawning PID 1 (<strong>systemd</strong>).</p>
       </div>
     </div>
@@ -747,54 +752,79 @@ body {
         </div>
         <div class="progress-track"><div class="progress-fill" id="bootProg"></div></div>
         <div class="btn-row">
-          <button class="btn btn-green" onclick="startBoot()">▶ Boot System</button>
-          <button class="btn" onclick="resetBoot()">↺ Reset</button>
+          <button class="btn btn-green" onclick="startBoot()">Boot System</button>
+          <button class="btn" onclick="resetBoot()">Reset</button>
         </div>
       </div>
     </div>
 
     <div class="callout callout-blue">
-      <div class="callout-icon">🔍</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">What is vmlinuz exactly?</div>
         <div class="callout-text">
-          <code>vmlinuz</code> = "Virtual Memory LINUx, gZipped". It's the Linux kernel compressed with gzip/zstd. GRUB loads it into RAM, and the first thing the kernel does is decompress itself. The <code>z</code> at the end literally means zipped. You can see it at <code>/boot/vmlinuz-6.8.0-generic</code> on Ubuntu.
+          <code>vmlinuz</code> = "Virtual Memory LINUx, gZipped". It is the Linux kernel compressed with gzip/zstd. GRUB loads it into RAM, and the first thing the kernel does is decompress itself. The <code>z</code> at the end literally means zipped. You can see it at <code>/boot/vmlinuz-6.8.0-generic</code> on Ubuntu.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 2: PROCESS SCHEDULER -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 2: PROCESS SCHEDULER ═══ -->
   <div class="section" id="s2">
     <div class="section-badge badge-green">02 · process management</div>
-    <h2>The Scheduler — Who Gets the CPU?</h2>
+    <h2>The Scheduler — Who Gets the CPU?
+      <span class="jargon-trigger" onclick="openJargon('s2')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
-      You have 200+ processes running right now but only 4–8 CPU cores. How does everyone get a turn? That's the scheduler's job. Linux uses <strong>CFS — the Completely Fair Scheduler</strong>. The idea: every process deserves its fair share of CPU time, no more, no less.
+      You have 200+ processes running right now but only 4 to 8 CPU cores. How does everyone get a turn? That is the scheduler's job. Linux uses <strong>CFS — the Completely Fair Scheduler</strong>. The idea: every process deserves its fair share of CPU time, no more, no less.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">🏃</div> Process States</h3>
-        <p>Every process is in one state at a time:
-          <br>🟢 <strong>Running</strong> — actively on a CPU core
-          <br>🔵 <strong>Waiting</strong> — in queue, ready to run
-          <br>🔴 <strong>Blocked</strong> — waiting for I/O (sleeping)
-          <br>⚪ <strong>Stopped</strong> — paused (Ctrl+Z)
-          <br>🟡 <strong>Zombie</strong> — finished but parent hasn't read exit status yet
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          Process States
+        </h3>
+        <p>Every process is in one state at a time:<br>
+          <strong>Running</strong> — actively on a CPU core<br>
+          <strong>Waiting</strong> — in queue, ready to run<br>
+          <strong>Blocked</strong> — waiting for I/O (sleeping)<br>
+          <strong>Stopped</strong> — paused (Ctrl+Z)<br>
+          <strong>Zombie</strong> — finished but parent has not read exit status yet
         </p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">🌳</div> CFS and vruntime</h3>
-        <p>Each process has a <strong>virtual runtime (vruntime)</strong> counter. When a process uses CPU, its vruntime ticks up. CFS always picks the process with the <strong>lowest vruntime</strong> — the one that's had the least CPU recently. This is stored in a red-black tree (self-balancing, O(log n) lookup).</p>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          CFS and vruntime
+        </h3>
+        <p>Each process has a <strong>virtual runtime (vruntime)</strong> counter. When a process uses CPU, its vruntime ticks up. CFS always picks the process with the <strong>lowest vruntime</strong> — the one that has had the least CPU recently. This is stored in a red-black tree (self-balancing, O(log n) lookup).</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">🔄</div> Context Switch</h3>
-        <p>When the scheduler swaps processes, it saves the current process's CPU state (registers, stack pointer, instruction pointer) into its <code>task_struct</code>, then loads the next process's state. This is called a <strong>context switch</strong>. Takes ~1–10 microseconds.</p>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          Context Switch
+        </h3>
+        <p>When the scheduler swaps processes, it saves the current process's CPU state (registers, stack pointer, instruction pointer) into its <code>task_struct</code>, then loads the next process's state. This is called a <strong>context switch</strong>. Takes roughly 1 to 10 microseconds.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--rose-light)">📋</div> task_struct</h3>
+        <h3>
+          <div class="icon" style="background:var(--rose-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          task_struct
+        </h3>
         <p>Every process is represented in the kernel by a <code>task_struct</code> — a C struct with 600+ fields: PID, parent PID, memory maps, open files, signal handlers, scheduling info, and more. Run <code>cat /proc/$$</code> in a terminal to peek at your shell's info.</p>
       </div>
     </div>
@@ -812,7 +842,7 @@ body {
             <div class="proc-list" id="procList"></div>
             <div class="btn-row" style="margin-top:12px">
               <button class="btn btn-green" onclick="spawnProcess()">+ Spawn</button>
-              <button class="btn btn-red" onclick="killSelected()">✕ Kill Selected</button>
+              <button class="btn btn-red" onclick="killSelected()">Kill Selected</button>
             </div>
           </div>
           <div>
@@ -832,11 +862,13 @@ body {
     </div>
 
     <div class="callout callout-green">
-      <div class="callout-icon">🔬</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">Try it yourself</div>
         <div class="callout-text">
-          Run <code>ps aux --sort=-%cpu</code> to see processes sorted by CPU use. Or <code>top</code> / <code>htop</code> for a live view. The S column is process state: R=Running, S=Sleeping, D=Disk wait (uninterruptible), Z=Zombie. D-state processes are a red flag — they're stuck waiting for I/O and can't be killed!
+          Run <code>ps aux --sort=-%cpu</code> to see processes sorted by CPU use. Or <code>top</code> / <code>htop</code> for a live view. The S column is process state: R=Running, S=Sleeping, D=Disk wait (uninterruptible), Z=Zombie. D-state processes are a red flag — they are stuck waiting for I/O and cannot be killed!
         </div>
       </div>
     </div>
@@ -855,31 +887,54 @@ body {
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 3: MEMORY -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 3: MEMORY ═══ -->
   <div class="section" id="s3">
     <div class="section-badge badge-blue">03 · memory management</div>
-    <h2>Virtual Memory — The Grand Illusion</h2>
+    <h2>Virtual Memory — The Grand Illusion
+      <span class="jargon-trigger" onclick="openJargon('s3')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
-      Every process on your machine thinks it has the entire 64-bit address space to itself — up to 128 TiB. Obviously that's not physically true. The kernel (with CPU hardware help) creates this illusion using <strong>virtual memory and page tables</strong>.
+      Every process on your machine thinks it has the entire 64-bit address space to itself — up to 128 TiB. Obviously that is not physically true. The kernel (with CPU hardware help) creates this illusion using <strong>virtual memory and page tables</strong>.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">🗺️</div> Virtual vs Physical Addresses</h3>
-        <p>When your C program does <code>malloc()</code>, it gets a <strong>virtual address</strong>. The CPU's MMU (Memory Management Unit) silently translates it to a <strong>physical RAM address</strong> using a page table. Each process has its own page table — that's why process A can't read process B's memory even at the same address.</p>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          Virtual vs Physical Addresses
+        </h3>
+        <p>When your C program does <code>malloc()</code>, it gets a <strong>virtual address</strong>. The CPU's MMU (Memory Management Unit) silently translates it to a <strong>physical RAM address</strong> using a page table. Each process has its own page table — that is why process A cannot read process B's memory even at the same address.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">📄</div> Pages — 4KB at a time</h3>
-        <p>Memory is divided into <strong>4KB chunks called pages</strong>. The kernel doesn't track individual bytes — it tracks pages. When you malloc 1 byte, you get a whole 4KB page. Page tables map virtual page numbers to physical page frames. On x86-64, there are 4 levels of page tables (PGD → PUD → PMD → PTE).</p>
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          Pages — 4KB at a time
+        </h3>
+        <p>Memory is divided into <strong>4KB chunks called pages</strong>. The kernel does not track individual bytes — it tracks pages. When you malloc 1 byte, you get a whole 4KB page. Page tables map virtual page numbers to physical page frames. On x86-64, there are 4 levels of page tables (PGD, PUD, PMD, PTE).</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">⚡</div> Page Fault</h3>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          Page Fault
+        </h3>
         <p>If a process accesses a virtual address with no physical mapping yet, the CPU fires a <strong>page fault exception</strong>. The kernel's fault handler wakes up, either loads the page from swap/disk or kills the process (segfault!). This is how demand paging works — pages are loaded only when touched.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--purple-light)">♻️</div> TLB — Translation Cache</h3>
+        <h3>
+          <div class="icon" style="background:var(--purple-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          TLB — Translation Cache
+        </h3>
         <p>Page table walks are expensive (4 memory lookups). The CPU caches recent translations in a <strong>TLB (Translation Lookaside Buffer)</strong>. Context switches often need a TLB flush — a major reason context switching has overhead. Modern CPUs have per-process ASID tags to reduce flushes.</p>
       </div>
     </div>
@@ -895,49 +950,74 @@ body {
         <div class="mem-legend" id="memLegend"></div>
         <div class="btn-row">
           <button class="btn btn-green" onclick="allocateMem()">+ malloc()</button>
-          <button class="btn btn-blue" onclick="triggerPageFault()">⚡ Page Fault</button>
-          <button class="btn" onclick="compactMem()">◈ Compact</button>
+          <button class="btn btn-blue" onclick="triggerPageFault()">Page Fault</button>
+          <button class="btn" onclick="compactMem()">Compact</button>
         </div>
         <div class="mem-log" id="memLog"><span style="color:#4b5563"># Interact with the memory map above</span></div>
       </div>
     </div>
 
     <div class="callout callout-amber">
-      <div class="callout-icon">⚠️</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">What is a segfault really?</div>
         <div class="callout-text">
-          A segmentation fault happens when a page fault can't be satisfied — either the virtual address has no mapping (null pointer dereference), or a process tries to write to a read-only page (writing to string literals), or accesses kernel space from userspace. The kernel sends SIGSEGV to the process, which kills it.
+          A segmentation fault happens when a page fault cannot be satisfied — either the virtual address has no mapping (null pointer dereference), or a process tries to write to a read-only page (writing to string literals), or accesses kernel space from userspace. The kernel sends SIGSEGV to the process, which kills it.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 4: VFS -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 4: VFS ═══ -->
   <div class="section" id="s4">
     <div class="section-badge badge-purple">04 · virtual file system</div>
-    <h2>VFS — "Everything is a File"</h2>
+    <h2>VFS — "Everything is a File"
+      <span class="jargon-trigger" onclick="openJargon('s4')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
       Linux's most famous idea: <strong>everything is a file</strong>. Your disk file? File. A network socket? File. The keyboard? File (<code>/dev/input</code>). A running process? File (<code>/proc/1234</code>). The VFS is the abstraction layer that makes this magic work.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--purple-light)">🗂️</div> inode — the real identity</h3>
-        <p>Every file has an <strong>inode</strong> — a data structure stored on disk with the file's metadata: permissions, owner, size, timestamps, and <strong>block pointers</strong> (where the actual data lives on disk). The filename is <em>not</em> stored in the inode — it's stored in the directory. That's why hard links can give one file multiple names.</p>
+        <h3>
+          <div class="icon" style="background:var(--purple-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          inode — the real identity
+        </h3>
+        <p>Every file has an <strong>inode</strong> — a data structure stored on disk with the file's metadata: permissions, owner, size, timestamps, and <strong>block pointers</strong> (where the actual data lives on disk). The filename is <em>not</em> stored in the inode — it is stored in the directory. That is why hard links can give one file multiple names.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">📛</div> dentry — name to inode mapping</h3>
-        <p>A <strong>dentry (directory entry)</strong> maps a filename to an inode number. When you do <code>open("/home/user/main.c")</code>, the kernel walks the path: root dentry → "home" → "user" → "main.c", resolving each to an inode. The <strong>dcache</strong> caches these so repeated opens are fast.</p>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
+          dentry — name to inode mapping
+        </h3>
+        <p>A <strong>dentry (directory entry)</strong> maps a filename to an inode number. When you do <code>open("/home/user/main.c")</code>, the kernel walks the path: root dentry, then "home", then "user", then "main.c", resolving each to an inode. The <strong>dcache</strong> caches these so repeated opens are fast.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">📂</div> file object — per-process handle</h3>
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          </div>
+          file object — per-process handle
+        </h3>
         <p>When a process opens a file, the kernel creates a <strong>file object</strong> in memory with the current position pointer (where in the file you are). The process gets back a small integer — the <strong>file descriptor (fd)</strong>. fd 0=stdin, 1=stdout, 2=stderr. Your next open() gets fd 3.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">🔌</div> VFS operations table</h3>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+          </div>
+          VFS operations table
+        </h3>
         <p>Each filesystem (ext4, BTRFS, tmpfs, procfs) registers a set of function pointers: <code>read()</code>, <code>write()</code>, <code>seek()</code>, etc. VFS calls these generically. Reading from <code>/proc/cpuinfo</code> calls a different function than reading from a real file — but your code sees the same <code>read()</code> call.</p>
       </div>
     </div>
@@ -945,7 +1025,7 @@ body {
     <div class="sim-card">
       <div class="sim-header">
         <div class="win-dots"><span></span><span></span><span></span></div>
-        <div class="sim-label">vfs-explorer — syscall trace &amp; inode inspector</div>
+        <div class="sim-label">vfs-explorer — syscall trace and inode inspector</div>
         <div class="live-pill"><div class="live-dot"></div>interactive</div>
       </div>
       <div class="sim-body">
@@ -957,61 +1037,88 @@ body {
           <div>
             <div style="font-family:var(--mono);font-size:10px;color:var(--ink4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Inode Inspector</div>
             <div class="inode-card" id="inodeCard">
-              <div style="color:var(--ink4);font-family:var(--mono);font-size:12px">← click a file to inspect its inode</div>
+              <div style="color:var(--ink4);font-family:var(--mono);font-size:12px">click a file to inspect its inode</div>
             </div>
             <div id="syscallFlowArea"></div>
           </div>
         </div>
         <div class="btn-row">
-          <button class="btn btn-green" onclick="simRead()">▶ Simulate read()</button>
-          <button class="btn btn-blue" onclick="simWrite()">▶ Simulate write()</button>
-          <button class="btn" onclick="simOpen()">▶ Simulate open()</button>
+          <button class="btn btn-green" onclick="simRead()">Simulate read()</button>
+          <button class="btn btn-blue" onclick="simWrite()">Simulate write()</button>
+          <button class="btn" onclick="simOpen()">Simulate open()</button>
         </div>
       </div>
     </div>
 
     <div class="callout callout-blue">
-      <div class="callout-icon">🧠</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">Why is /proc "magic"?</div>
         <div class="callout-text">
-          <code>/proc</code> is a <strong>pseudo-filesystem</strong> — it doesn't exist on disk. It's generated on-the-fly by the kernel. When you <code>cat /proc/meminfo</code>, the kernel generates that text dynamically. <code>/proc/1234/maps</code> shows the memory map of PID 1234. <code>/proc/cpuinfo</code> reads actual CPU model registers. It's a live window into the kernel's internal state.
+          <code>/proc</code> is a <strong>pseudo-filesystem</strong> — it does not exist on disk. It is generated on-the-fly by the kernel. When you <code>cat /proc/meminfo</code>, the kernel generates that text dynamically. <code>/proc/1234/maps</code> shows the memory map of PID 1234. <code>/proc/cpuinfo</code> reads actual CPU model registers. It is a live window into the kernel's internal state.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 5: INTERRUPTS -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 5: INTERRUPTS ═══ -->
   <div class="section" id="s5">
     <div class="section-badge badge-amber">05 · hardware interrupts</div>
-    <h2>Interrupts — How Hardware Talks to the Kernel</h2>
+    <h2>Interrupts — How Hardware Talks to the Kernel
+      <span class="jargon-trigger" onclick="openJargon('s5')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
-      Hardware doesn't wait to be polled. When your keyboard key lands, the keyboard controller doesn't wait for the kernel to ask "any keys pressed?" — it shouts. That shout is an <strong>interrupt</strong>. The CPU immediately drops whatever it's doing and handles it.
+      Hardware does not wait to be polled. When your keyboard key lands, the keyboard controller does not wait for the kernel to ask "any keys pressed?" — it shouts. That shout is an <strong>interrupt</strong>. The CPU immediately drops whatever it is doing and handles it.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">📋</div> What is an IRQ?</h3>
-        <p>IRQ stands for <strong>Interrupt ReQuest</strong>. Each hardware device has an IRQ number (keyboard=1, timer=0, disk=14...). When hardware fires, the CPU reads the IRQ number and looks it up in the <strong>IDT</strong> to know which handler to call. View your system's IRQs with <code>cat /proc/interrupts</code>.</p>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          What is an IRQ?
+        </h3>
+        <p>IRQ stands for <strong>Interrupt ReQuest</strong>. Each hardware device has an IRQ number (keyboard=1, timer=0, disk=14). When hardware fires, the CPU reads the IRQ number and looks it up in the <strong>IDT</strong> to know which handler to call. View your system's IRQs with <code>cat /proc/interrupts</code>.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">📖</div> IDT — Interrupt Descriptor Table</h3>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+          IDT — Interrupt Descriptor Table
+        </h3>
         <p>The <strong>IDT</strong> is a 256-entry table in kernel memory. Each entry is a pointer to a handler function for that interrupt number. Entry 0 = divide-by-zero handler. Entry 1 = keyboard. Entry 14 = page fault. Entry 128 = syscall! The CPU register <code>IDTR</code> holds the address of the IDT.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">⬆️</div> Top Half (fast)</h3>
-        <p>When an interrupt fires, the kernel's <strong>top half</strong> handler runs with interrupts <em>disabled</em>. It must be blazing fast: acknowledge the hardware (so it stops asserting the IRQ line), save any critical data, then schedule the slow work. Usually takes &lt;1 microsecond.</p>
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          Top Half (fast)
+        </h3>
+        <p>When an interrupt fires, the kernel's <strong>top half</strong> handler runs with interrupts <em>disabled</em>. It must be blazing fast: acknowledge the hardware (so it stops asserting the IRQ line), save any critical data, then schedule the slow work. Usually takes less than 1 microsecond.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--rose-light)">⬇️</div> Bottom Half (slow)</h3>
-        <p>The heavier work happens in the <strong>bottom half</strong> — with interrupts re-enabled. Linux uses <strong>softirqs</strong>, <strong>tasklets</strong>, and <strong>workqueues</strong>. Example: NIC top half just grabs the packet from hardware. Bottom half runs TCP/IP stack, socket buffers — that's the slow expensive part.</p>
+        <h3>
+          <div class="icon" style="background:var(--rose-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          Bottom Half (slow)
+        </h3>
+        <p>The heavier work happens in the <strong>bottom half</strong> — with interrupts re-enabled. Linux uses <strong>softirqs</strong>, <strong>tasklets</strong>, and <strong>workqueues</strong>. Example: NIC top half just grabs the packet from hardware. Bottom half runs TCP/IP stack, socket buffers — that is the slow expensive part.</p>
       </div>
     </div>
 
     <div class="callout callout-blue">
-      <div class="callout-icon">🔧</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">APIC — Modern Interrupt Controller</div>
         <div class="callout-text">
@@ -1031,38 +1138,61 @@ body {
         <div class="hw-grid" id="hwGrid"></div>
         <div style="font-family:var(--mono);font-size:10px;color:var(--ink4);letter-spacing:1.5px;text-transform:uppercase;margin-top:16px;margin-bottom:8px">IRQ Event Log</div>
         <div class="irq-log" id="irqLog">
-          <div style="color:#4b5563;font-size:11px">Click a device above to fire its interrupt →</div>
+          <div style="color:#4b5563;font-size:11px">Click a device above to fire its interrupt</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- SECTION 6: SYSCALLS -->
-  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ═══ SECTION 6: SYSCALLS ═══ -->
   <div class="section" id="s6">
     <div class="section-badge badge-rose">06 · system calls</div>
-    <h2>Syscalls — The Gate Between Worlds</h2>
+    <h2>Syscalls — The Gate Between Worlds
+      <span class="jargon-trigger" onclick="openJargon('s6')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        Jargon for this section
+      </span>
+    </h2>
     <p class="section-intro">
-      Every time your program needs something from the kernel — reading a file, allocating memory, creating a thread — it makes a <strong>system call</strong>. It's the one legal way for user code to enter kernel mode. Think of it as ringing the front desk bell.
+      Every time your program needs something from the kernel — reading a file, allocating memory, creating a thread — it makes a <strong>system call</strong>. It is the one legal way for user code to enter kernel mode. Think of it as ringing the front desk bell.
     </p>
 
     <div class="concept-grid">
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--rose-light)">🔔</div> How a syscall works</h3>
-        <p>Your program puts the syscall number in register <code>rax</code>, arguments in <code>rdi, rsi, rdx...</code>, then executes the <code>syscall</code> instruction. The CPU switches to Ring 0, jumps to the kernel's syscall entry point, which reads <code>rax</code> and dispatches to the right handler function.</p>
+        <h3>
+          <div class="icon" style="background:var(--rose-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          How a syscall works
+        </h3>
+        <p>Your program puts the syscall number in register <code>rax</code>, arguments in <code>rdi, rsi, rdx</code>, then executes the <code>syscall</code> instruction. The CPU switches to Ring 0, jumps to the kernel's syscall entry point, which reads <code>rax</code> and dispatches to the right handler function.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--amber-light)">📊</div> The Syscall Table</h3>
-        <p>The kernel has a table — <code>sys_call_table</code> — an array of function pointers indexed by syscall number. <code>sys_call_table[0]</code> = <code>sys_read</code>. <code>sys_call_table[1]</code> = <code>sys_write</code>. There are ~340 syscalls in Linux x86-64. View them in <code>/usr/include/asm/unistd_64.h</code>.</p>
+        <h3>
+          <div class="icon" style="background:var(--amber-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          The Syscall Table
+        </h3>
+        <p>The kernel has a table — <code>sys_call_table</code> — an array of function pointers indexed by syscall number. <code>sys_call_table[0]</code> = <code>sys_read</code>. <code>sys_call_table[1]</code> = <code>sys_write</code>. There are roughly 340 syscalls in Linux x86-64. View them in <code>/usr/include/asm/unistd_64.h</code>.</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--blue-light)">🔬</div> strace — spy on syscalls</h3>
-        <p><code>strace ls</code> shows every syscall <code>ls</code> makes. It's eye-opening — a simple <code>ls</code> calls <code>execve</code>, dozens of <code>mmap</code>s, <code>openat</code>, <code>getdents64</code>, <code>write</code>, and <code>exit_group</code>. strace intercepts syscalls using the <code>ptrace</code> mechanism (same thing gdb uses).</p>
+        <h3>
+          <div class="icon" style="background:var(--blue-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          strace — spy on syscalls
+        </h3>
+        <p><code>strace ls</code> shows every syscall <code>ls</code> makes. It is eye-opening — a simple <code>ls</code> calls <code>execve</code>, dozens of <code>mmap</code>s, <code>openat</code>, <code>getdents64</code>, <code>write</code>, and <code>exit_group</code>. strace intercepts syscalls using the <code>ptrace</code> mechanism (same thing gdb uses).</p>
       </div>
       <div class="concept-block">
-        <h3><div class="icon" style="background:var(--green-light)">💰</div> Syscall cost</h3>
-        <p>Syscalls aren't free. Each one is a Ring 3 → Ring 0 transition, saves registers, does work, restores state, and returns. About <strong>100–300ns each</strong>. Spectre/Meltdown mitigations (KPTI) made it 5–10× more expensive on older CPUs. High-performance code batches I/O to minimize syscalls.</p>
+        <h3>
+          <div class="icon" style="background:var(--green-light)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          Syscall cost
+        </h3>
+        <p>Syscalls are not free. Each one is a Ring 3 to Ring 0 transition, saves registers, does work, restores state, and returns. About <strong>100 to 300ns each</strong>. Spectre/Meltdown mitigations (KPTI) made it 5 to 10x more expensive on older CPUs. High-performance code batches I/O to minimize syscalls.</p>
       </div>
     </div>
 
@@ -1073,7 +1203,7 @@ body {
       <div class="diag-arrow">→</div>
       <div class="diag-node"><div class="diag-box d-blue">syscall<br>entry</div><div class="diag-sub">save registers</div></div>
       <div class="diag-arrow">→</div>
-      <div class="diag-node"><div class="diag-box d-blue">dispatch<br>table</div><div class="diag-sub">rax → handler</div></div>
+      <div class="diag-node"><div class="diag-box d-blue">dispatch<br>table</div><div class="diag-sub">rax to handler</div></div>
       <div class="diag-arrow">→</div>
       <div class="diag-node"><div class="diag-box d-green">sys_write<br>handler</div><div class="diag-sub">does the work</div></div>
       <div class="diag-arrow">→</div>
@@ -1106,11 +1236,13 @@ body {
     </div>
 
     <div class="callout callout-green">
-      <div class="callout-icon">🎯</div>
+      <div class="callout-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
       <div class="callout-body">
         <div class="callout-title">Putting it all together</div>
         <div class="callout-text">
-          When you run <code>cat file.txt</code> — here's the full journey: shell forks (<code>clone</code> syscall) → child calls <code>execve("/bin/cat")</code> → kernel loads the ELF binary → cat calls <code>open()</code> → VFS resolves the path → inode lookup → fd returned → <code>read()</code> loop → VFS → ext4 driver → disk I/O or page cache hit → data copied to buffer → <code>write(1, ...)</code> → terminal driver → characters on screen. Every step goes through the kernel.
+          When you run <code>cat file.txt</code> — here is the full journey: shell forks (<code>clone</code> syscall) then child calls <code>execve("/bin/cat")</code> then kernel loads the ELF binary then cat calls <code>open()</code> then VFS resolves the path then inode lookup then fd returned then <code>read()</code> loop then VFS then ext4 driver then disk I/O or page cache hit then data copied to buffer then <code>write(1, ...)</code> then terminal driver then characters on screen. Every step goes through the kernel.
         </div>
       </div>
     </div>
@@ -1124,6 +1256,350 @@ window.addEventListener('scroll', () => {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   document.getElementById('scrollFill').style.width = (window.scrollY / max * 100) + '%';
 });
+
+// ─── JARGON DATA ───
+const jargonData = {
+  s0: {
+    title: 'Foundation Jargon',
+    subtitle: 'kernel basics · rings · x86',
+    brief: 'This section introduces the kernel as the boss of your computer. Before diving in, here are the words you will keep seeing — explained like you are hearing them for the first time.',
+    terms: [
+      {
+        code: 'x86 CPU',
+        tag: 'hardware',
+        body: `<strong>x86</strong> is the name of the instruction set — basically the "language" your CPU speaks. When Intel built the 8086 chip in 1978, they called it x86. Every chip since (Pentium, Core i7, Ryzen) still speaks this same language, just much faster. When you see "x86-64" it means the 64-bit version that modern computers use. Your Linux kernel is compiled specifically for x86-64 — it knows exactly which instructions your CPU understands.`,
+        analogy: 'Think of x86 as the grammar rules of a language. Intel invented the grammar in 1978 and everyone still uses it today.'
+      },
+      {
+        code: 'Rings 0, 1, 2, 3',
+        tag: 'cpu concept',
+        body: `Your CPU has a built-in security system called <strong>privilege rings</strong>. Imagine 4 circles inside each other. The innermost circle (Ring 0) has full power — it can do anything: read any memory, control any hardware. The outermost circle (Ring 3) is the most restricted — your apps live here and cannot touch hardware directly. Linux only uses Ring 0 (kernel) and Ring 3 (your programs). This is enforced by the CPU chip itself in hardware, not software.`,
+        analogy: 'Like a nuclear power plant: workers in the outer area cannot enter the reactor room. The physical door stops them, not just a rule.'
+      },
+      {
+        code: 'Firmware',
+        tag: 'boot concept',
+        body: `<strong>Firmware</strong> is software permanently baked into a chip. Unlike your programs on disk, firmware lives on a small ROM (Read-Only Memory) chip on the motherboard. When you press power, your CPU has literally one instruction it always runs first — it jumps to the firmware's address in memory. The firmware (BIOS or UEFI) then wakes up hardware, checks if RAM works, and hands control to your bootloader. It runs before Linux even exists in memory.`,
+        analogy: 'Firmware is like the factory-default behavior burned into a device. A calculator always powers on ready to calculate because of firmware.'
+      },
+      {
+        code: '0xFFFF0 / hex addresses',
+        tag: 'memory',
+        body: `Numbers that start with <code>0x</code> are written in <strong>hexadecimal</strong> (base 16 instead of base 10). Instead of digits 0-9, hex uses 0-9 and A-F. So <code>0xFF</code> = 255 in decimal. <code>0xFFFF0</code> is a specific memory address — the location in ROM where the CPU always starts executing when powered on. Memory addresses are written in hex because it maps cleanly to binary (each hex digit = 4 binary bits), making it easier for engineers to read.`,
+        analogy: 'Hex is just a shorthand notation. Like how "dozen" means 12 — same number, different word.'
+      },
+      {
+        code: 'Kernel Space vs User Space',
+        tag: 'concept',
+        body: `Your computer's memory is divided into two zones. <strong>Kernel space</strong> is where the kernel lives — it can access everything. <strong>User space</strong> is where your apps live — isolated from each other and from the kernel. If Firefox tries to read Chrome's memory, the CPU blocks it instantly. This separation is what makes it possible to run 50 apps at once without them corrupting each other.`,
+        analogy: 'Like a hospital: doctors can enter any room (kernel space), but patients stay in their own rooms (user space) and cannot wander into surgery.'
+      }
+    ]
+  },
+  s1: {
+    title: 'Boot Sequence Jargon',
+    subtitle: 'bios · grub · vmlinuz · initrd',
+    brief: 'The boot process uses a lot of acronyms and weird filenames. This sidebar decodes every term you will encounter when a Linux machine starts up from a cold power-on.',
+    terms: [
+      {
+        code: 'BIOS vs UEFI',
+        tag: 'firmware',
+        body: `<strong>BIOS</strong> (Basic Input/Output System) was the old standard firmware from the 1980s. It lives in a chip and runs before anything else. <strong>UEFI</strong> (Unified Extensible Firmware Interface) is the modern replacement. UEFI is basically a tiny operating system — it has a graphical interface, can connect to the internet, read files from a USB drive, and supports drives larger than 2TB (BIOS could not). On laptops and desktops made after 2012, you almost certainly have UEFI.`,
+        analogy: 'BIOS is a flip phone. UEFI is a smartphone. They both make calls but one can do much more.'
+      },
+      {
+        code: 'POST',
+        tag: 'boot step',
+        body: `<strong>POST</strong> = Power-On Self Test. When you press the power button, before anything on your screen shows up, the firmware runs a quick health check: is RAM actually responding? Are the CPU cores alive? Is there a boot device? If something fails POST, you get beep codes (different beep patterns = different problems). A successful POST means "hardware seems fine, proceeding to boot." This entire test takes about half a second on modern hardware.`,
+        analogy: 'Like a pilot doing a pre-flight checklist before taking off. The plane checks itself before it trusts itself to fly.'
+      },
+      {
+        code: 'MBR and GPT',
+        tag: 'disk',
+        body: `<strong>MBR</strong> (Master Boot Record) is the very first 512 bytes of your hard drive. It contains a tiny program (the bootloader stub) and a partition table. The firmware reads this and runs that tiny program. <strong>GPT</strong> (GUID Partition Table) is the modern replacement that stores the partition layout differently and supports up to 128 partitions and drives larger than 2TB. UEFI reads GPT natively.`,
+        analogy: 'MBR is like a library card catalog on the very first shelf — a tiny index that tells you where everything else is.'
+      },
+      {
+        code: 'GRUB2',
+        tag: 'bootloader',
+        body: `<strong>GRUB</strong> (Grand Unified Bootloader) is the program that actually finds and loads the Linux kernel. You see it when you have multiple operating systems installed and get a menu. GRUB knows how to read filesystems (ext4, BTRFS, NTFS) — that is unusual because at this point Linux is not running yet! GRUB has its own filesystem drivers built in. It finds the kernel file, loads it into RAM, and passes control to it.`,
+        analogy: 'GRUB is the ignition key. The firmware got the car ready, but GRUB is what actually starts the engine (the kernel).'
+      },
+      {
+        code: 'vmlinuz',
+        tag: 'file',
+        body: `<strong>vmlinuz</strong> is the actual Linux kernel file sitting on your disk at <code>/boot/vmlinuz-6.8.0</code>. The name breaks down as: <strong>vm</strong> = Virtual Memory, <strong>linu</strong> = Linux, <strong>z</strong> = compressed (gzip or zstd). It is just the kernel binary file, compressed to save space. When GRUB loads it into RAM, the kernel immediately decompresses itself as the very first thing it does. You can see its size with <code>ls -lh /boot/vmlinuz*</code> — typically 10 to 15 MB compressed.`,
+        analogy: 'vmlinuz is like a zip file of the kernel. It unzips itself automatically when opened.'
+      },
+      {
+        code: 'initrd / initramfs',
+        tag: 'file',
+        body: `<strong>initrd</strong> (initial RAM disk) is a temporary mini-Linux that exists only in RAM during early boot. The problem: to mount your real root filesystem (on an ext4 partition), Linux needs the ext4 driver. But the ext4 driver is stored on the ext4 partition. Chicken and egg! The initrd solves this by providing a tiny filesystem in RAM with just enough drivers to mount the real disk. Once the real filesystem is mounted, initrd is thrown away. You can find it at <code>/boot/initrd.img-6.8.0</code>.`,
+        analogy: 'initrd is like the temporary scaffolding used to build a building. Once construction is done, you remove the scaffolding.'
+      },
+      {
+        code: 'PID 1 / systemd',
+        tag: 'process',
+        body: `Every process on Linux has a Process ID (PID) number. PID 1 is special — it is the very first process the kernel creates after booting. Everything else on your computer is a child of PID 1. On modern Linux, PID 1 is <strong>systemd</strong> — a program that starts all your services (networking, logging, display server, etc.) in the right order. You can see it with <code>ps -p 1</code>. If PID 1 dies, the kernel panics because the entire process tree is orphaned.`,
+        analogy: 'PID 1 is like the first employee at a company who then hires everyone else. If they quit on day one, nothing gets set up.'
+      }
+    ]
+  },
+  s2: {
+    title: 'Scheduler Jargon',
+    subtitle: 'CFS · vruntime · context switch · task_struct',
+    brief: 'The scheduler decides who uses the CPU. These terms describe how it tracks processes, picks winners, and switches between them — all in microseconds.',
+    terms: [
+      {
+        code: 'CFS (Completely Fair Scheduler)',
+        tag: 'kernel subsystem',
+        body: `<strong>CFS</strong> is the name of Linux's default scheduling algorithm, introduced in kernel 2.6.23 (2007). "Completely Fair" means every process gets proportionally equal CPU time based on its priority. If you have 4 equal-priority processes and 4 CPU cores, each gets one core. If you have 10 processes on 4 cores, each gets 40% of a core's time. CFS does NOT round-robin (give each process a fixed timeslice) — instead it tracks how much CPU time each process has received and always picks the most-deprived one.`,
+        analogy: 'CFS is like a fair queue at a water fountain. Whoever has waited longest goes next. Nobody hogs it forever.'
+      },
+      {
+        code: 'vruntime',
+        tag: 'scheduler concept',
+        body: `<strong>vruntime</strong> (virtual runtime) is a counter attached to every process that measures how much CPU time it has consumed. When a process runs, its vruntime increases. When a process is blocked (waiting for disk), its vruntime freezes. CFS maintains a <strong>red-black tree</strong> (a self-balancing sorted data structure) where all runnable processes are sorted by vruntime. The scheduler always picks the leftmost node — the process with the smallest vruntime, meaning "least CPU time received so far."`,
+        analogy: 'Imagine a scoreboard showing how many turns each player has had. CFS always picks the player with the fewest turns.'
+      },
+      {
+        code: 'Context Switch',
+        tag: 'cpu operation',
+        body: `A <strong>context switch</strong> is when the CPU stops running one process and starts running another. The word "context" refers to the CPU's current state: what values are in all the registers (tiny ultra-fast storage inside the CPU), what memory the process is using, where execution paused. All of this gets saved into the process's <code>task_struct</code> in kernel memory. Then the next process's saved state is loaded in. The whole swap takes 1 to 10 microseconds. Modern machines do thousands per second.`,
+        analogy: 'Like a barista saving your coffee order mid-brew to serve someone else, then coming back and picking up exactly where they left off.'
+      },
+      {
+        code: 'task_struct',
+        tag: 'kernel data structure',
+        body: `<strong>task_struct</strong> is the C struct (data record) the kernel uses to represent one process. It is huge — over 600 fields. It stores: the PID, the parent's PID, which CPU core it is on, its memory maps, its open file list, signal handlers, CPU registers saved during context switch, scheduling information (vruntime, priority), and dozens more. Every running process has exactly one task_struct in kernel memory. You can see some of this data via <code>/proc/PID/status</code>.`,
+        analogy: 'task_struct is like a patient chart in a hospital. Everything the system needs to know about that process is written there.'
+      },
+      {
+        code: 'Zombie Process',
+        tag: 'process state',
+        body: `A <strong>zombie</strong> is a process that has finished running but whose entry in the process table has not been cleaned up yet. When a process exits, it cannot remove itself — the kernel keeps its task_struct around because the parent process is supposed to call <code>wait()</code> to collect the exit status. Until the parent does that, the dead process is a zombie (Z state in <code>ps</code> output). Zombies consume almost no resources — just a slot in the process table. If a parent dies without calling wait(), the zombie gets adopted by PID 1, which cleans it up.`,
+        analogy: 'A zombie is a closed store that still has its sign up. The business is done, but someone needs to officially remove the listing.'
+      }
+    ]
+  },
+  s3: {
+    title: 'Memory Management Jargon',
+    subtitle: 'pages · MMU · TLB · page fault · segfault',
+    brief: 'Virtual memory is one of the cleverest tricks in computing. These terms explain how your computer pretends to have infinite memory and keeps each program in its own bubble.',
+    terms: [
+      {
+        code: 'Virtual vs Physical Address',
+        tag: 'memory concept',
+        body: `When you write code and your variable is at address <code>0x00400000</code>, that is a <strong>virtual address</strong> — it is a lie, a comfortable fiction. The CPU's MMU silently translates it to a <strong>physical address</strong> — a real location in your actual RAM chips. Two different processes can both have a variable at virtual address <code>0x00400000</code> but they map to completely different physical RAM locations. This is how isolation works: processes cannot see each other's memory even if the addresses look the same.`,
+        analogy: 'Like two hotels both having a "Room 101" — same number, but physically in different buildings. You cannot walk from one to the other.'
+      },
+      {
+        code: 'MMU (Memory Management Unit)',
+        tag: 'hardware',
+        body: `The <strong>MMU</strong> is a dedicated circuit inside your CPU chip responsible for translating virtual addresses to physical addresses. Every single memory access your program makes goes through the MMU. It does this translation by consulting a <strong>page table</strong> — a set of lookup tables the kernel maintains in RAM. The MMU hardware does this translation in nanoseconds without involving the kernel at all — it is pure hardware logic.`,
+        analogy: 'The MMU is like a GPS that auto-translates every street name you type into GPS coordinates, invisibly and instantly.'
+      },
+      {
+        code: 'Page (4KB)',
+        tag: 'memory unit',
+        body: `Linux does not manage memory one byte at a time — that would require tracking billions of entries. Instead it divides all memory into fixed-size chunks called <strong>pages</strong>, each 4096 bytes (4KB) on x86. When you <code>malloc(1)</code> to allocate just 1 byte, the kernel gives you a whole 4KB page. The page table maps virtual page numbers to physical page frame numbers. This also means the minimum granularity of memory protection is 4KB — you cannot make just one byte read-only, you make the whole page read-only.`,
+        analogy: 'Memory pages are like parking spaces. Even if you drive a tiny car (small allocation), you still take up the whole space.'
+      },
+      {
+        code: 'Page Fault',
+        tag: 'cpu exception',
+        body: `A <strong>page fault</strong> is when a program tries to access a virtual address that has no current physical page mapped to it. The CPU hardware detects this and fires an exception (like a hardware interrupt but for software errors) which wakes up the kernel's page fault handler. The handler checks: is this a valid address the process is allowed to use? If yes, it allocates a physical page, maps it, and returns — the program never knew anything happened. If no (null pointer, out-of-bounds), the kernel sends SIGSEGV to the program, causing the crash you see as "Segmentation fault."`,
+        analogy: 'A page fault is like ordering something that is not in stock. The store (kernel) either finds it in the warehouse (loads from disk) or says "we do not carry that" (segfault).'
+      },
+      {
+        code: 'TLB (Translation Lookaside Buffer)',
+        tag: 'cpu cache',
+        body: `Walking the page table for every memory access would require 4 separate RAM lookups (on x86-64 there are 4 levels of page tables). That would make every memory access 4x slower! The solution is the <strong>TLB</strong> — a tiny, ultra-fast cache inside the CPU that stores recent virtual-to-physical address translations. If the address you need is in the TLB (a "TLB hit"), the translation is instant. If not (a "TLB miss"), the MMU walks the page table and caches the result. Modern CPUs have separate TLBs for instructions and data.`,
+        analogy: 'The TLB is like having a short personal phonebook of numbers you call often. Instead of looking up the full directory every time, you check your notes first.'
+      },
+      {
+        code: 'Segfault (SIGSEGV)',
+        tag: 'error',
+        body: `A <strong>segmentation fault</strong> is when your program gets killed for accessing memory it is not allowed to touch. The word "segmentation" comes from old memory models where RAM was divided into "segments." A fault in that segment = segfault. Today it means: you tried to access a virtual address that either does not exist in your page table, or exists but you do not have permission (like writing to read-only code memory, or touching address 0 which is intentionally never mapped). The kernel delivers the <strong>SIGSEGV</strong> signal to your process, which by default kills it.`,
+        analogy: 'Touching someone else\'s stuff and getting caught. The security guard (kernel) throws you out.'
+      }
+    ]
+  },
+  s4: {
+    title: 'VFS and Filesystem Jargon',
+    subtitle: 'inode · dentry · fd · /proc · /dev',
+    brief: 'The "everything is a file" philosophy means Linux uses one unified interface for disks, devices, and kernel data. These terms explain the plumbing behind it.',
+    terms: [
+      {
+        code: 'inode',
+        tag: 'filesystem',
+        body: `An <strong>inode</strong> (index node) is a data structure stored on your disk that holds a file's metadata. Every file and directory has exactly one inode. The inode stores: file size, owner user ID, group ID, permissions (read/write/execute for owner/group/others), timestamps (created/modified/accessed), and most importantly — <strong>block pointers</strong> (addresses of the actual disk blocks where the file content lives). What the inode does NOT store is the filename. Filenames are stored in directories. This is why you can have multiple filenames pointing to the same inode (hard links).`,
+        analogy: 'An inode is like a library book record in the catalog: it has all the metadata (author, size, location on shelf) but not the title — that is in the index under the book\'s name.'
+      },
+      {
+        code: 'dentry (directory entry)',
+        tag: 'filesystem',
+        body: `A <strong>dentry</strong> is the kernel's in-memory representation of a directory entry — essentially the mapping from "this filename" to "this inode number." When you do <code>open("/home/user/file.c")</code>, the kernel performs a path walk: it looks up "/" in the root dentry, gets the inode for "home", looks up "home" to get the inode for "user", and so on. The <strong>dcache</strong> (dentry cache) stores recently used dentries in RAM so repeated file opens do not require walking the whole path from scratch each time.`,
+        analogy: 'A dentry is like a sign on a door: it has the name and points you to the room number (inode). The dcache is your memory of where you have been before.'
+      },
+      {
+        code: 'File Descriptor (fd)',
+        tag: 'process concept',
+        body: `A <strong>file descriptor</strong> is just a small integer (0, 1, 2, 3...) that your program uses to refer to an open file. When you call <code>open()</code>, the kernel creates an internal file object and returns you a number to reference it. fd 0 is always standard input (keyboard), fd 1 is standard output (screen), fd 2 is standard error. When you write <code>read(3, buf, 100)</code>, you are saying "read 100 bytes from whatever file I opened that got number 3." File descriptors are per-process — fd 3 in one process is completely unrelated to fd 3 in another.`,
+        analogy: 'A file descriptor is like a ticket number at a deli counter. The actual food (file) is tracked by the staff (kernel), you just hold a number.'
+      },
+      {
+        code: '/proc filesystem',
+        tag: 'special fs',
+        body: `<code>/proc</code> is a <strong>virtual filesystem</strong> — it does not exist on any disk. The kernel generates its contents entirely in memory when you read from it. It is a window into the kernel's live state. Reading <code>/proc/meminfo</code> does not read a file — it triggers a kernel function that formats current memory statistics as text. <code>/proc/1234/</code> is a directory representing process 1234, containing files like <code>maps</code> (its memory layout), <code>fd/</code> (its open files), <code>status</code> (its stats). It is the most powerful debugging tool on Linux.`,
+        analogy: '/proc is like a live dashboard display that generates numbers fresh every time you look at it, not from stored records.'
+      },
+      {
+        code: '/dev filesystem',
+        tag: 'special fs',
+        body: `<code>/dev</code> contains device files — special files that represent hardware. <code>/dev/sda</code> is your hard drive. <code>/dev/null</code> is a black hole (anything written to it disappears, reading gives nothing). <code>/dev/random</code> generates random bytes from hardware noise. <code>/dev/input/event0</code> is your keyboard — you can literally <code>cat /dev/input/event0</code> and see raw keyboard events. Reading and writing to these files calls the actual device driver, not any disk storage. The kernel routes I/O operations on these files directly to hardware driver code.`,
+        analogy: '/dev files are like control panels. The panel does not store data — touching its buttons directly controls the machine behind the wall.'
+      }
+    ]
+  },
+  s5: {
+    title: 'Interrupt Jargon',
+    subtitle: 'IRQ · IDT · softirq · tasklet · workqueue · APIC',
+    brief: 'Hardware needs to talk to software instantly. Interrupts are the mechanism. These terms explain how a keyboard keypress finds its way from the hardware pin to your screen character.',
+    terms: [
+      {
+        code: 'Interrupt',
+        tag: 'hardware concept',
+        body: `An <strong>interrupt</strong> is a signal from hardware (or software) that tells the CPU "stop what you are doing right now, something important happened." The CPU finishes its current instruction, saves its state, and immediately jumps to the interrupt handler code. This is fundamentally different from <strong>polling</strong> (where software constantly asks "did anything happen?"). Interrupts are far more efficient — the CPU can run your programs at full speed and only react when something actually happens.`,
+        analogy: 'The difference between polling and interrupts is like the difference between checking your phone every second vs having notifications. Interrupts are notifications.'
+      },
+      {
+        code: 'IRQ (Interrupt ReQuest)',
+        tag: 'hardware',
+        body: `<strong>IRQ</strong> numbers identify which device is asking for attention. In old systems (PIC), each device had a hardwired IRQ number: keyboard=1, mouse=12, timer=0, first IDE disk=14. When hardware fires, the CPU reads the IRQ number and looks up the right handler. Modern systems use APIC where IRQ routing is flexible. You can see your current IRQ assignments and how many times each has fired with <code>cat /proc/interrupts</code> — it updates in real time.`,
+        analogy: 'IRQs are like different ringtones. Each one tells you who is calling before you even answer.'
+      },
+      {
+        code: 'IDT (Interrupt Descriptor Table)',
+        tag: 'kernel structure',
+        body: `The <strong>IDT</strong> is a table of 256 entries in kernel memory. Each entry says "when interrupt number N fires, jump to this function address." Entry 0 = divide by zero handler. Entry 1 = debug trap. Entry 8 = double fault. Entry 14 = page fault handler. Entry 32 and above = hardware device IRQs. Entry 128 = system call entry point. The CPU hardware reads a special register (<code>IDTR</code>) to find where this table is in memory. The kernel sets this table up very early in boot, before allowing any interrupts.`,
+        analogy: 'The IDT is like a fire station dispatch table: emergency type 1 goes to ladder truck, type 2 goes to ambulance, type 3 goes to hazmat. Each emergency has a dedicated response.'
+      },
+      {
+        code: 'softirq',
+        tag: 'kernel mechanism',
+        body: `A <strong>softirq</strong> (software interrupt request) is a mechanism for deferring work from a hardware interrupt handler. When a network packet arrives, the NIC fires a hardware interrupt. The top-half handler runs immediately and just grabs the packet from the hardware buffer. The rest of the work (running the TCP/IP stack, processing the packet, waking up the right socket) is deferred to a softirq which runs with interrupts enabled. There are a fixed number of softirq types compiled into the kernel (like TIMER_SOFTIRQ, NET_RX_SOFTIRQ, BLOCK_SOFTIRQ).`,
+        analogy: 'A softirq is like a post-it note left after a quick interruption: "deal with this properly when you have a moment."'
+      },
+      {
+        code: 'tasklet',
+        tag: 'kernel mechanism',
+        body: `A <strong>tasklet</strong> is built on top of softirqs but easier for driver developers to use. A softirq is global and complex; a tasklet lets a driver say "run this function later when safe, but only on the CPU that scheduled it." Tasklets cannot sleep (block waiting for something) — they must run and finish quickly. They are guaranteed to run on a single CPU at a time (no parallel execution of the same tasklet). Most drivers use tasklets instead of raw softirqs.`,
+        analogy: 'If softirqs are a company policy, tasklets are a specific team\'s procedure. Same rules, but scoped to one group.'
+      },
+      {
+        code: 'workqueue',
+        tag: 'kernel mechanism',
+        body: `A <strong>workqueue</strong> is the most flexible deferred work mechanism. Unlike tasklets, work in a workqueue runs in a <strong>kernel thread context</strong> — meaning it CAN sleep (wait for disk I/O, wait for a lock, etc.). This is important for slow operations. The kernel has a pool of worker threads (<code>kworker</code>) that pick up queued work items and execute them. You can see these threads with <code>ps aux | grep kworker</code>. Anything too slow for a softirq or tasklet goes into a workqueue.`,
+        analogy: 'A workqueue is like an email inbox for tasks. The kernel threads are workers who check the inbox and process each item, including ones that take a while.'
+      },
+      {
+        code: 'APIC',
+        tag: 'hardware',
+        body: `<strong>APIC</strong> (Advanced Programmable Interrupt Controller) replaced the old single 8259 PIC chip. Modern systems have two types: the <strong>Local APIC</strong> (one per CPU core, handles timers and inter-processor messages) and the <strong>I/O APIC</strong> (connects to all hardware devices and routes their IRQs to specific CPU cores). This routing is configurable — the kernel can tell the I/O APIC "send all network interrupts to CPU 2 and all disk interrupts to CPU 3" to balance load. You can see APIC info in <code>/proc/interrupts</code>.`,
+        analogy: 'APIC is like a modern phone switchboard that can route any incoming call to any specific desk, versus the old system where each desk had a dedicated phone line.'
+      }
+    ]
+  },
+  s6: {
+    title: 'Syscall Jargon',
+    subtitle: 'registers · rax/rdi/rsi · execve · mmap · strace',
+    brief: 'System calls are the only door between your program and the kernel. These terms explain the CPU registers used, the specific syscall names you will see everywhere, and what strace output actually means.',
+    terms: [
+      {
+        code: 'CPU Registers (rax, rdi, rsi, rdx)',
+        tag: 'hardware',
+        body: `<strong>Registers</strong> are tiny, ultra-fast storage locations inside the CPU chip itself. They are not in RAM — they are inside the processor. The x86-64 CPU has 16 general-purpose registers with names like <code>rax</code>, <code>rbx</code>, <code>rcx</code>, <code>rdx</code>, <code>rdi</code>, <code>rsi</code>. The "r" prefix means 64-bit register. For system calls, Linux uses a specific convention: <code>rax</code> holds the syscall number, <code>rdi</code> holds argument 1, <code>rsi</code> holds argument 2, <code>rdx</code> holds argument 3. The return value comes back in <code>rax</code>. This convention is defined in the x86-64 System V ABI document.`,
+        analogy: 'Registers are like a cashier\'s hands — they hold what is being actively worked on right now. RAM is the storage room in the back.'
+      },
+      {
+        code: 'execve',
+        tag: 'syscall',
+        body: `<strong>execve</strong> is the syscall that replaces the current running program with a different program. When your shell runs <code>ls</code>, it first calls <code>fork()</code> to make a copy of itself, then the copy calls <code>execve("/bin/ls", ["ls"], env)</code>. This completely replaces the forked shell process with the ls program — new code, new memory, same PID. The arguments are: path to the executable, an array of argument strings (argv), and environment variables. Everything about the process is replaced except the PID and open file descriptors.`,
+        analogy: 'execve is like a caterpillar becoming a butterfly. Same PID (same creature), completely different program (different form).'
+      },
+      {
+        code: 'mmap',
+        tag: 'syscall',
+        body: `<strong>mmap</strong> (memory map) is a syscall that creates a new mapping in the process's virtual address space. It has multiple uses: loading shared libraries (libm.so, libc.so) into memory without copying them, allocating large chunks of anonymous memory (what <code>malloc</code> uses under the hood for big allocations), and mapping files directly into memory (so reading the memory IS reading the file). When you start any program, the kernel calls mmap to load the executable and all its libraries. That is why strace output shows dozens of mmap calls at program startup.`,
+        analogy: 'mmap is like staking a claim on land. You are telling the kernel "I want to use this range of virtual address space for this purpose."'
+      },
+      {
+        code: 'openat',
+        tag: 'syscall',
+        body: `<strong>openat</strong> is the modern version of <code>open()</code>. The "at" suffix means it opens a file relative to a directory file descriptor, not just the current working directory. <code>openat(AT_FDCWD, "/etc/passwd", O_RDONLY)</code> — the first argument <code>AT_FDCWD</code> means "use the current directory as the base, same as old open()." This was added for security reasons (avoiding race conditions) and is now the preferred syscall. When you see it in strace, treat it as equivalent to open().`,
+        analogy: 'openat is like saying "in that drawer over there, find the file named X" vs just "find the file named X somewhere."'
+      },
+      {
+        code: 'getdents64',
+        tag: 'syscall',
+        body: `<strong>getdents64</strong> (get directory entries, 64-bit) is the syscall that reads the list of files inside a directory. When you run <code>ls</code>, it opens the directory with <code>openat()</code> and then calls <code>getdents64()</code> to get all the filenames and their inode numbers. The "64" means it uses 64-bit inode numbers (supports huge filesystems). This is the raw kernel call — the C library function <code>readdir()</code> wraps getdents64 to give you a nicer interface.`,
+        analogy: 'getdents64 is like asking the filing cabinet "give me a list of all folder names in this drawer." ls is the person asking.'
+      },
+      {
+        code: 'exit_group',
+        tag: 'syscall',
+        body: `<strong>exit_group</strong> terminates all threads in the current process group at once. Regular <code>exit()</code> only exits the calling thread. Since modern programs use multiple threads, <code>exit_group</code> is what you almost always want — it makes sure all threads are cleanly terminated together. It is the last line in virtually every strace output because programs call it as their final action. The argument is the exit code (0 = success, non-zero = error), which the parent process can read with <code>wait()</code>.`,
+        analogy: 'exit_group is like a fire alarm that evacuates the entire building. Regular exit is like one person leaving their office.'
+      },
+      {
+        code: 'strace',
+        tag: 'tool',
+        body: `<strong>strace</strong> is a Linux debugging tool that intercepts and prints every system call a program makes. It works using the <code>ptrace</code> syscall — the same mechanism gdb uses. It attaches to a process and gets notified every time that process enters or exits kernel mode. The output format is: <code>syscall_name(arg1, arg2, ...) = return_value</code>. A return value of -1 means error (it will also show the errno). Running <code>strace ls</code> or <code>strace -p PID</code> to attach to a running process are the most common uses. It does slow programs down significantly (each syscall requires extra kernel handling), so only use it for debugging.`,
+        analogy: 'strace is like a security camera at the kernel reception desk that logs every request a program makes and what answer it received.'
+      }
+    ]
+  }
+};
+
+// ─── JARGON OPEN / CLOSE ───
+function openJargon(sectionId) {
+  const data = jargonData[sectionId];
+  if (!data) return;
+
+  document.getElementById('jargonTitle').textContent = data.title;
+  document.getElementById('jargonSubtitle').textContent = data.subtitle;
+  document.getElementById('jargonBrief').textContent = data.brief;
+
+  const termsEl = document.getElementById('jargonTerms');
+  termsEl.innerHTML = '';
+
+  data.terms.forEach(term => {
+    const card = document.createElement('div');
+    card.className = 'jargon-term-card';
+    card.innerHTML = `
+      <div class="jargon-term-head">
+        <span class="jargon-term-code">${term.code}</span>
+        <span class="jargon-term-tag">${term.tag}</span>
+      </div>
+      <div class="jargon-term-body">
+        ${term.body}
+        ${term.analogy ? `<div class="jargon-analogy"><div class="jargon-analogy-label">Real-world analogy</div>${term.analogy}</div>` : ''}
+      </div>
+    `;
+    termsEl.appendChild(card);
+  });
+
+  document.getElementById('jargonOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeJargon() {
+  document.getElementById('jargonOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeJargon(); });
 
 // ─── BOOT SIMULATION ───
 const bootLines = [
@@ -1153,10 +1629,10 @@ const bootLines = [
   {c:'t-warn', t:'[    0.214019] Freeing unused kernel image (initmem) memory: 3060K'},
   {c:'t-ok',   t:'[    0.228834] Write protecting kernel read-only data: 26624k'},
   {c:'t-ok',   t:'[    0.314729] systemd[1]: Detected architecture x86-64'},
-  {c:'t-ok',   t:'[    0.358913] systemd[1]: Hostname set to <linux-sim>'},
+  {c:'t-ok',   t:'[    0.358913] systemd[1]: Hostname set to linux-sim'},
   {c:'t-ok',   t:'[    0.401827] systemd[1]: Starting Journal Service...'},
   {c:'t-ok',   t:'[    0.524981] systemd[1]: Network Manager started'},
-  {c:'t-hi',   t:'[    0.612034] ✓ Linux kernel fully operational. PID 1 = systemd'},
+  {c:'t-hi',   t:'[    0.612034] Linux kernel fully operational. PID 1 = systemd'},
   {c:'t-hi',   t:'          Welcome to Linux 6.8.0 — kernel simulation ready'},
 ];
 
@@ -1192,7 +1668,7 @@ function startBoot() {
 }
 function resetBoot() {
   bootActive = false;
-  document.getElementById('bootLog').innerHTML = '<span class="line t-dim"># Hit "Boot System" to watch the kernel come alive</span>';
+  document.getElementById('bootLog').innerHTML = '<span class="line t-dim"># Hit Boot System to watch the kernel come alive</span>';
   document.getElementById('bootProg').style.width = '0%';
 }
 
@@ -1238,7 +1714,6 @@ function renderCores() {
 }
 function schedTick() {
   if (!procs.length) return;
-  const prev = procs.find(p=>p.state==='running');
   procs.forEach(p => { if (p.state==='running') p.state = 'waiting'; });
   const runnable = procs.filter(p=>p.state!=='zombie');
   if (!runnable.length) return;
@@ -1251,7 +1726,7 @@ function schedTick() {
   if (log) {
     const line = document.createElement('span');
     line.className = 'line';
-    line.innerHTML = `<span style="color:#52b788">[CFS]</span> <span style="color:#9ca3af">context switch →</span> <span style="color:#e2ddd7">${next.name}</span><span style="color:#4b5563"> (PID ${next.pid}) vrt:${next.vruntime}</span>`;
+    line.innerHTML = `<span style="color:#52b788">[CFS]</span> <span style="color:#9ca3af">context switch to</span> <span style="color:#e2ddd7">${next.name}</span><span style="color:#4b5563"> (PID ${next.pid}) vrt:${next.vruntime}</span>`;
     log.appendChild(line);
     log.scrollTop = log.scrollHeight;
     if (log.children.length > 10) log.removeChild(log.firstChild);
@@ -1267,14 +1742,14 @@ function initScheduler() {
 
 // ─── MEMORY MAP ───
 const memSegs = [
-  { addr:'ffff800000000000', label:'Kernel Space', color:'#e11d48', pct:14, type:'kernel', desc:'Kernel code, data, stack — Ring 0 only' },
-  { addr:'ffffffff81000000', label:'Kernel Text', color:'#7c3aed', pct:7, type:'ktext', desc:'Executable kernel instructions' },
-  { addr:'00007fff00000000', label:'Stack', color:'#2563eb', pct:11, type:'stack', desc:'Function call frames, local vars — grows down' },
-  { addr:'00007f8000000000', label:'mmap / libs', color:'#d97706', pct:24, type:'mmap', desc:'Shared libraries (.so), anonymous mmap' },
-  { addr:'0000000010000000', label:'Heap', color:'#059669', pct:16, type:'heap', desc:'malloc() lives here — grows upward via brk()' },
-  { addr:'0000000000601000', label:'BSS / Data', color:'#0891b2', pct:6, type:'bss', desc:'Uninitialized globals, static vars' },
-  { addr:'0000000000400000', label:'Code (Text)', color:'#2d6a4f', pct:10, type:'text', desc:'Your compiled program instructions' },
-  { addr:'0000000000000000', label:'Null / Unused', color:'#d1d5db', pct:12, type:'null', desc:'Not mapped — null pointer dereferences crash here' },
+  { addr:'ffff800000000000', label:'Kernel Space', color:'#e11d48', pct:14, desc:'Kernel code, data, stack — Ring 0 only' },
+  { addr:'ffffffff81000000', label:'Kernel Text', color:'#7c3aed', pct:7, desc:'Executable kernel instructions' },
+  { addr:'00007fff00000000', label:'Stack', color:'#2563eb', pct:11, desc:'Function call frames, local vars — grows down' },
+  { addr:'00007f8000000000', label:'mmap / libs', color:'#d97706', pct:24, desc:'Shared libraries (.so), anonymous mmap' },
+  { addr:'0000000010000000', label:'Heap', color:'#059669', pct:16, desc:'malloc() lives here — grows upward via brk()' },
+  { addr:'0000000000601000', label:'BSS / Data', color:'#0891b2', pct:6, desc:'Uninitialized globals, static vars' },
+  { addr:'0000000000400000', label:'Code (Text)', color:'#2d6a4f', pct:10, desc:'Your compiled program instructions' },
+  { addr:'0000000000000000', label:'Null / Unused', color:'#d1d5db', pct:12, desc:'Not mapped — null pointer dereferences crash here' },
 ];
 function renderMemMap() {
   const map = document.getElementById('memMap');
@@ -1283,7 +1758,7 @@ function renderMemMap() {
   memSegs.forEach(seg => {
     const row = document.createElement('div');
     row.className = 'mem-row';
-    row.innerHTML = `<div class="mem-addr">0x${seg.addr.slice(0,8)}…</div><div class="mem-bar-wrap"><div class="mem-bar-fill" style="width:${seg.pct}%;background:${seg.color}"></div></div><div class="mem-seg-label">${seg.label}</div>`;
+    row.innerHTML = `<div class="mem-addr">0x${seg.addr.slice(0,8)}...</div><div class="mem-bar-wrap"><div class="mem-bar-fill" style="width:${seg.pct}%;background:${seg.color}"></div></div><div class="mem-seg-label">${seg.label}</div>`;
     row.onclick = () => addMemLog(`${seg.label} @ 0x${seg.addr} — ${seg.desc}`);
     map.appendChild(row);
   });
@@ -1312,7 +1787,7 @@ function allocateMem() {
 }
 function triggerPageFault() {
   const va = '0x' + Math.floor(Math.random()*0xfffff).toString(16).padStart(8,'0');
-  addMemLog(`PAGE FAULT at ${va} — kernel resolves → maps page → process resumes`);
+  addMemLog(`PAGE FAULT at ${va} — kernel resolves, maps page, process resumes`);
 }
 function compactMem() {
   document.querySelectorAll('.mem-bar-fill').forEach(f => {
@@ -1392,19 +1867,27 @@ function showFlow(title, steps) {
     setTimeout(() => { document.getElementById(`sf${i}`)?.classList.add('active'); }, i*230+200);
   });
 }
-function simRead() { showFlow('read() syscall flow', ['userspace: read(fd, buf, n)','syscall instruction → Ring 0','kernel validates fd in process file table','VFS dispatches to filesystem driver (ext4)','check page cache — is data in RAM?','cache miss → submit async block I/O','disk DMA completes → interrupt fired','data copied to userspace buffer','sysret → back to Ring 3']); }
-function simWrite() { showFlow('write() syscall flow', ['userspace: write(fd, buf, n)','syscall instruction → kernel mode','validate fd + check buffer permissions','VFS write → dirty page in page cache','page marked dirty (needs writeback)','pdflush daemon will flush to disk later','return bytes written immediately','sysret → Ring 3 (write is async!)']); }
-function simOpen() { showFlow('open() syscall flow', ['open("/home/user/main.c", O_RDONLY)','syscall → Ring 0','path lookup: root → home → user → main.c','check dcache (dentry cache) for each','inode found → check permissions (DAC)','allocate new file descriptor slot','fill file struct: ops table, pos=0','return fd=3 to userspace','sysret → Ring 3']); }
+function simRead() { showFlow('read() syscall flow', ['userspace: read(fd, buf, n)','syscall instruction, Ring 0','kernel validates fd in process file table','VFS dispatches to filesystem driver (ext4)','check page cache, is data in RAM?','cache miss, submit async block I/O','disk DMA completes, interrupt fired','data copied to userspace buffer','sysret, back to Ring 3']); }
+function simWrite() { showFlow('write() syscall flow', ['userspace: write(fd, buf, n)','syscall instruction, kernel mode','validate fd, check buffer permissions','VFS write, dirty page in page cache','page marked dirty (needs writeback)','pdflush daemon will flush to disk later','return bytes written immediately','sysret, Ring 3 (write is async!)']); }
+function simOpen() { showFlow('open() syscall flow', ['open("/home/user/main.c", O_RDONLY)','syscall, Ring 0','path lookup: root, home, user, main.c','check dcache (dentry cache) for each','inode found, check permissions (DAC)','allocate new file descriptor slot','fill file struct: ops table, pos=0','return fd=3 to userspace','sysret, Ring 3']); }
 
 // ─── INTERRUPTS ───
 const hwDevs = [
-  { name:'Keyboard', icon:'⌨️', irq:1,   count:0, desc:'scancode → input subsystem → /dev/input/eventX → X11/Wayland' },
-  { name:'NIC eth0', icon:'🌐', irq:19,  count:0, desc:'packet DMA → sk_buff allocated → TCP/IP stack → socket buffer' },
-  { name:'SATA Disk', icon:'💾', irq:16, count:0, desc:'I/O complete → bio finished → VFS wakes blocked process' },
-  { name:'Timer IRQ', icon:'⏱️', irq:0,  count:0, desc:'jiffies++ → scheduler tick → check if process timeslice expired' },
-  { name:'USB Mouse', icon:'🖱️', irq:12, count:0, desc:'HID event → input_event → /dev/input/mouse0' },
-  { name:'APIC IPI',  icon:'⚡', irq:253,count:0, desc:'inter-processor interrupt → target CPU wakes → handles TLB flush' },
+  { name:'Keyboard', svgId:'kbd', irq:1,   count:0, desc:'scancode, input subsystem, /dev/input/eventX, X11/Wayland' },
+  { name:'NIC eth0', svgId:'nic', irq:19,  count:0, desc:'packet DMA, sk_buff allocated, TCP/IP stack, socket buffer' },
+  { name:'SATA Disk',svgId:'disk',irq:16,  count:0, desc:'I/O complete, bio finished, VFS wakes blocked process' },
+  { name:'Timer IRQ',svgId:'tmr', irq:0,   count:0, desc:'jiffies++, scheduler tick, check if process timeslice expired' },
+  { name:'USB Mouse',svgId:'mse', irq:12,  count:0, desc:'HID event, input_event, /dev/input/mouse0' },
+  { name:'APIC IPI', svgId:'ipi', irq:253, count:0, desc:'inter-processor interrupt, target CPU wakes, TLB flush' },
 ];
+const hwSVGs = {
+  kbd:  `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="6" y1="14" x2="6" y2="14"/><line x1="18" y1="14" x2="18" y2="14"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+  nic:  `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+  disk: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+  tmr:  `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  mse:  `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="6"/><line x1="12" y1="2" x2="12" y2="10"/></svg>`,
+  ipi:  `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+};
 function renderHW() {
   const grid = document.getElementById('hwGrid');
   if (!grid) return;
@@ -1412,7 +1895,7 @@ function renderHW() {
   hwDevs.forEach((d,i) => {
     const el = document.createElement('div');
     el.className = 'hw-device'; el.id = `hw${i}`;
-    el.innerHTML = `<div class="hw-icon">${d.icon}</div><div class="hw-name">${d.name}</div><div class="hw-irq">IRQ ${d.irq}</div><div class="hw-count" id="hc${i}">${d.count} fired</div>`;
+    el.innerHTML = `<div class="hw-icon">${hwSVGs[d.svgId]}</div><div class="hw-name">${d.name}</div><div class="hw-irq">IRQ ${d.irq}</div><div class="hw-count" id="hc${i}">${d.count} fired</div>`;
     el.onclick = () => fireIRQ(i);
     grid.appendChild(el);
   });
@@ -1426,10 +1909,10 @@ function fireIRQ(idx) {
   const log = document.getElementById('irqLog'); if(!log) return;
   irqMs += Math.floor(Math.random()*400)+80;
   const t = (irqMs/1000).toFixed(3);
-  if (log.firstChild?.tagName !== 'DIV' || !log.firstChild.className?.includes('irq-entry')) log.innerHTML = '';
+  if (log.firstChild?.style?.color === '#4b5563') log.innerHTML = '';
   const entry = document.createElement('div');
   entry.className = 'irq-entry';
-  entry.innerHTML = `<div class="irq-time">[${t}s]</div><div class="irq-text"><span class="irq-highlight">IRQ${dev.irq}</span> ${dev.name} → ${dev.desc}</div>`;
+  entry.innerHTML = `<div class="irq-time">[${t}s]</div><div class="irq-text"><span class="irq-highlight">IRQ${dev.irq}</span> ${dev.name}: ${dev.desc}</div>`;
   log.insertBefore(entry, log.firstChild);
   if (log.children.length > 12) log.removeChild(log.lastChild);
 }
@@ -1437,16 +1920,16 @@ setInterval(() => fireIRQ(3), 3200);
 
 // ─── SYSCALL TABLE ───
 const scData = [
-  { nr:0,  name:'read',    desc:'Read bytes from a file descriptor',     ex:'read(3, buf, 4096)' },
-  { nr:1,  name:'write',   desc:'Write bytes to a file descriptor',      ex:'write(1, "hello", 5)' },
-  { nr:2,  name:'open',    desc:'Open a file, returns file descriptor',  ex:'open("/etc/passwd", O_RDONLY)' },
-  { nr:3,  name:'close',   desc:'Close a file descriptor',               ex:'close(3)' },
-  { nr:9,  name:'mmap',    desc:'Map file/device into virtual memory',   ex:'mmap(NULL, 4096, PROT_READ, ...)' },
-  { nr:56, name:'clone',   desc:'Create a new process or thread',        ex:'clone(CLONE_VM|CLONE_SIGHAND, ...)' },
-  { nr:57, name:'fork',    desc:'Duplicate current process',             ex:'pid = fork()' },
-  { nr:59, name:'execve',  desc:'Replace process image with a program',  ex:'execve("/bin/ls", argv, envp)' },
-  { nr:60, name:'exit',    desc:'Terminate the current process',         ex:'exit(0)' },
-  { nr:231,name:'exit_group','desc':'Terminate all threads in group',    ex:'exit_group(0)' },
+  { nr:0,   name:'read',       desc:'Read bytes from a file descriptor',     ex:'read(3, buf, 4096)' },
+  { nr:1,   name:'write',      desc:'Write bytes to a file descriptor',      ex:'write(1, "hello", 5)' },
+  { nr:2,   name:'open',       desc:'Open a file, returns file descriptor',  ex:'open("/etc/passwd", O_RDONLY)' },
+  { nr:3,   name:'close',      desc:'Close a file descriptor',               ex:'close(3)' },
+  { nr:9,   name:'mmap',       desc:'Map file/device into virtual memory',   ex:'mmap(NULL, 4096, PROT_READ, ...)' },
+  { nr:56,  name:'clone',      desc:'Create a new process or thread',        ex:'clone(CLONE_VM|CLONE_SIGHAND, ...)' },
+  { nr:57,  name:'fork',       desc:'Duplicate current process',             ex:'pid = fork()' },
+  { nr:59,  name:'execve',     desc:'Replace process image with a program',  ex:'execve("/bin/ls", argv, envp)' },
+  { nr:60,  name:'exit',       desc:'Terminate the current process',         ex:'exit(0)' },
+  { nr:231, name:'exit_group', desc:'Terminate all threads in group',        ex:'exit_group(0)' },
 ];
 function renderSCTable() {
   const body = document.getElementById('scTableBody'); if(!body) return;
@@ -1462,9 +1945,9 @@ const traceData = {
     'brk(NULL) = 0x55a812b40000',
     'mmap(NULL, 8192, PROT_READ|PROT_WRITE, ...) = 0x7f80aa000000',
     'openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY) = 3',
-    'mmap(NULL, 139264, PROT_READ, ...) = 0x7f80ab000000  — load libc',
+    'mmap(NULL, 139264, PROT_READ, ...) = 0x7f80ab000000  // load libc',
     'openat(AT_FDCWD, ".", O_RDONLY|O_DIRECTORY) = 3',
-    'getdents64(3, ..., 32768) = 312  — read directory entries',
+    'getdents64(3, ..., 32768) = 312  // read directory entries',
     'fstat(1, {st_mode=S_IFCHR|0620}) = 0',
     'write(1, "bin  boot  dev  etc  home\\n", 26) = 26',
     'close(3) = 0',
@@ -1474,11 +1957,11 @@ const traceData = {
     'execve("/bin/cat", ["cat", "main.c"], envp) = 0',
     'openat(AT_FDCWD, "main.c", O_RDONLY) = 3',
     'fstat(3, {st_size=4312, st_blksize=4096}) = 0',
-    'fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL) = 0  — hint to kernel',
+    'fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL) = 0  // hint to kernel',
     'mmap(NULL, 139264, PROT_READ|PROT_WRITE, ...) = 0x7f1234000000',
     'read(3, "#include <stdio.h>\\n#include <std", 131072) = 4312',
     'write(1, "#include <stdio.h>\\n...", 4312) = 4312',
-    'read(3, "", 131072) = 0  — EOF',
+    'read(3, "", 131072) = 0  // EOF',
     'close(3) = 0',
     'exit_group(0) = ?',
   ],
@@ -1487,19 +1970,19 @@ const traceData = {
     'openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY) = 3',
     'mmap(NULL, 4096, PROT_READ|PROT_WRITE, ...) = 0x7f00',
     'openat(AT_FDCWD, "libpython3.11.so", O_RDONLY) = 4',
-    'mmap(NULL, 4722688, PROT_READ, ...) = 0x7f10  — load interpreter',
-    'clone(child_stack=NULL, flags=CLONE_VM) = 1423  — GIL thread',
+    'mmap(NULL, 4722688, PROT_READ, ...) = 0x7f10  // load interpreter',
+    'clone(child_stack=NULL, flags=CLONE_VM) = 1423  // GIL thread',
     'openat(AT_FDCWD, "/usr/lib/python3.11", O_DIRECTORY) = 5',
-    'brk(0x55a000001000) = 0x55a000001000  — heap grows',
+    'brk(0x55a000001000) = 0x55a000001000  // heap grows',
     'write(1, "Python 3.11.8\\n>>> ", 18) = 18',
   ],
   curl: [
     'execve("/usr/bin/curl", ["curl", "example.com"], envp) = 0',
-    'socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = 3  — create TCP socket',
-    'getaddrinfo("example.com", "80", ...) — DNS lookup',
+    'socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = 3  // create TCP socket',
+    'getaddrinfo("example.com", "80", ...) // DNS lookup',
     'connect(3, {sa_family=AF_INET, sin_addr=93.184.216.34:80}) = 0',
     'sendto(3, "GET / HTTP/1.1\\r\\nHost: example.c...", 78) = 78',
-    'epoll_wait(4, ..., 1, 30000) = 1  — wait for response',
+    'epoll_wait(4, ..., 1, 30000) = 1  // wait for response',
     'recvfrom(3, "HTTP/1.1 200 OK\\r\\n...", 16384) = 1256',
     'write(1, "<!doctype html>\\n<html>...", 1256) = 1256',
     'close(3) = 0',
